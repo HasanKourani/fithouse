@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fit House | Gym, garden and café in Housh, Tyre</title>
+  <meta name="description" content="A gym with a garden and a café in Housh, Tyre. Open gym, Muay Thai for kids and adults, women's classes and ladies-only mornings. Let the outside in.">
+  <meta name="theme-color" content="#444341">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fit House | Let the outside in">
+  <meta property="og:description" content="A gym with a garden, a café and windows onto the trees. Housh, Tyre.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700;1,900&family=Tajawal:wght@300;400;700;900&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css?v=5">
+  <script>
+    // Decide on motion before first paint: the footer switch wins, then the OS setting.
+    (function () {
+      var root = document.documentElement, pref = null;
+      root.classList.add('js');
+      try { pref = localStorage.getItem('fithouse-motion'); } catch (e) {}
+      if (pref === 'on' || (pref !== 'off' && !matchMedia('(prefers-reduced-motion: reduce)').matches)) root.classList.add('motion');
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ExerciseGym",
+    "name": "Fit House",
+    "slogan": "Let the outside in",
+    "telephone": "+961 76 684 096",
+    "address": {"@type": "PostalAddress", "streetAddress": "Housh", "addressLocality": "Tyre", "addressCountry": "LB"},
+    "geo": {"@type": "GeoCoordinates", "latitude": 33.240566, "longitude": 35.239929},
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "22:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "13:00", "closes": "18:30"}
+    ],
+    "sameAs": ["https://www.instagram.com/fithouselb/"]
+  }
+  </script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <path id="leaf" d="M0 0C20-16 58-18 92 0C58 18 20 16 0 0Z" fill="currentColor"/>
+    </defs>
+    <!-- Brand mark: head, raised arm and the roof stroke from the Fit House logo -->
+    <symbol id="mark" viewBox="0 0 126 94">
+      <circle cx="81" cy="15" r="10.5" fill="currentColor"/>
+      <path d="M41 20 63.5 43.5 117 14M9 72 40 46.5 80 85" fill="none" stroke="currentColor" stroke-width="12.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <!-- Leaf shadows that fall across every "outside" surface -->
+    <symbol id="leaves" viewBox="0 0 600 800" preserveAspectRatio="xMaxYMin slice">
+      <path d="M640-30C540 110 430 230 255 440" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+      <use href="#leaf" transform="translate(588 44) rotate(78) scale(1.15)"/>
+      <use href="#leaf" transform="translate(566 74) rotate(172) scale(1.05)"/>
+      <use href="#leaf" transform="translate(505 148) rotate(66) scale(1.3)"/>
+      <use href="#leaf" transform="translate(482 176) rotate(186) scale(1.15)"/>
+      <use href="#leaf" transform="translate(424 238) rotate(58) scale(1.4)"/>
+      <use href="#leaf" transform="translate(398 266) rotate(192) scale(1.25)"/>
+      <use href="#leaf" transform="translate(344 330) rotate(74) scale(1.2)"/>
+      <use href="#leaf" transform="translate(312 362) rotate(176) scale(1.3)"/>
+      <use href="#leaf" transform="translate(262 430) rotate(128) scale(1.25)"/>
+      <path d="M-30 830C70 710 160 650 310 600" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+      <use href="#leaf" transform="translate(40 760) rotate(-62) scale(1.1)"/>
+      <use href="#leaf" transform="translate(62 746) rotate(22) scale(1.05)"/>
+      <use href="#leaf" transform="translate(122 690) rotate(-72) scale(1.25)"/>
+      <use href="#leaf" transform="translate(146 678) rotate(12) scale(1.15)"/>
+      <use href="#leaf" transform="translate(204 644) rotate(-48) scale(1.2)"/>
+      <use href="#leaf" transform="translate(230 634) rotate(30) scale(1.1)"/>
+      <use href="#leaf" transform="translate(304 602) rotate(-16) scale(1.2)"/>
+    </symbol>
+  </svg>
+
+  <a class="skip" href="#story" data-i18n="skip">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__bar">
+      <a class="brand" href="#top" data-i18n-attr="aria-label:brand.label" aria-label="Fit House, back to top">
+        <svg class="brand__mark mark" viewBox="0 0 126 94" aria-hidden="true">
+          <g class="mark__headg"><circle class="mark__head" cx="81" cy="15" r="10.5"/></g>
+          <g class="mark__armg"><path class="mark__arm" d="M41 20 63.5 43.5 117 14" pathLength="100"/></g>
+          <path class="mark__roof" d="M9 72 40 46.5 80 85" pathLength="100"/>
+        </svg>
+        <span class="brand__word" lang="en">Fit House</span>
+      </a>
+      <nav class="nav__links" id="nav-links" data-i18n-attr="aria-label:nav.label" aria-label="Main">
+        <a href="#house" data-i18n="nav.house">The house</a>
+        <a href="#classes" data-i18n="nav.classes">Classes</a>
+        <a href="#bundles" data-i18n="nav.bundles">Bundles</a>
+        <a href="#visit" data-i18n="nav.visit">Hours &amp; map</a>
+        <a class="nav__links-book" href="#book" data-i18n="nav.book">Book a class</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="lang" type="button" id="lang-toggle" lang="ar">عربي</button>
+        <a class="btn btn--moss btn--small nav__book" href="#book" data-i18n="nav.book">Book a class</a>
+        <button class="nav__menu" type="button" id="nav-menu" aria-expanded="false" aria-controls="nav-links" data-i18n="nav.menu">Menu</button>
+      </div>
+    </div>
+    <!-- Scroll progress, with the logo figure running along it -->
+    <div class="progress" id="progress" aria-hidden="true">
+      <span class="progress__bar"></span>
+      <svg class="progress__runner mark" viewBox="0 0 126 94">
+        <g class="mark__headg"><circle class="mark__head" cx="81" cy="15" r="10.5"/></g>
+        <g class="mark__armg"><path class="mark__arm" d="M41 20 63.5 43.5 117 14"/></g>
+        <path class="mark__roof" d="M9 72 40 46.5 80 85"/>
+      </svg>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__stage">
+        <div class="hero__outside outside" aria-hidden="true">
+          <svg class="leaves"><use href="#leaves"/></svg>
+          <img class="hero__photo" src="assets/img/photos/window-view.webp" alt="" width="800" height="1420" decoding="async">
+          <svg class="hero__outside-mark"><use href="#mark"/></svg>
+        </div>
+        <div class="hero__inner wrap">
+          <div class="hero__copy">
+            <h1 class="hero__title" id="hero-title" lang="en" dir="ltr">Let the outside in.</h1>
+            <p class="hero__lede" data-i18n="hero.lede">A gym with a garden, a café and windows onto the trees. In Housh, Tyre.</p>
+            <div class="hero__ctas">
+              <a class="btn btn--moss" href="#book" data-i18n="hero.book">Book a class</a>
+              <a class="btn btn--ghost" href="#bundles"><span data-i18n="hero.bundles">See the bundles</span><svg class="chev" viewBox="0 0 30 14" aria-hidden="true"><path d="M2 2l5 5-5 5"/><path d="M11.5 2l5 5-5 5"/><path d="M21 2l5 5-5 5"/></svg></a>
+            </div>
+            <p class="status" data-status data-i18n="status.fallback">Monday to Friday 8:00 AM to 10:00 PM, Saturday 1:00 to 6:30 PM</p>
+          </div>
+          <div class="hero__window outside" id="hero-window">
+            <svg class="leaves" aria-hidden="true"><use href="#leaves"/></svg>
+            <img class="hero__photo" src="assets/img/photos/window-view.webp" width="800" height="1420" fetchpriority="high"
+              alt="Two treadmills facing a wide window onto trees and lawn" data-i18n-attr="alt:photo.window">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto outside" id="story" aria-label="Our story" data-i18n-attr="aria-label:manifesto.label">
+      <svg class="leaves" aria-hidden="true"><use href="#leaves"/></svg>
+      <div class="wrap">
+        <p class="manifesto__line" data-i18n-html="manifesto.1">They told you <s>strength belongs on concrete.</s></p>
+        <p class="manifesto__line" data-i18n-html="manifesto.2">They told you <s>fitness belongs under flickering lights and closed ceilings.</s></p>
+        <p class="manifesto__line" data-i18n-html="manifesto.3">They told you <s>to pick: gym or coffee, friends or fitness.</s></p>
+        <p class="manifesto__verdict" data-i18n="manifesto.verdict">They were wrong.</p>
+        <p class="manifesto__body" data-i18n="manifesto.body">Fit House is a gym with a garden, a café and windows onto the trees. Train at your own pace, in a space that respects your time and energy.</p>
+      </div>
+    </section>
+
+    <section class="section" id="house" aria-labelledby="house-title">
+      <div class="wrap">
+        <h2 class="title" id="house-title">
+          <span class="title__black" data-i18n="house.title1">Under one</span>
+          <span class="title__light" data-i18n="house.title2">roof</span>
+        </h2>
+        <p class="lede" data-i18n="house.lede">Train, sit down, have your coffee, and carry on with your day with more energy than you came in with.</p>
+
+        <div class="house">
+          <svg class="house__roof" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M8 112 500 10 992 112" vector-effect="non-scaling-stroke"/>
+          </svg>
+          <div class="house__rooms">
+            <article class="room room--gym">
+              <img class="room__photo" src="assets/img/photos/gym-floor.webp" width="900" height="676" loading="lazy" decoding="async"
+                alt="Racks, plates and leg machines on the Fit House gym floor" data-i18n-attr="alt:photo.gymFloor">
+              <h3 data-i18n="room.gym.title">The gym floor</h3>
+              <p data-i18n="room.gym.text">Free weights, racks and machines for every muscle group.</p>
+              <p class="room__note" data-i18n="room.gym.note">Weekday mornings are ladies only.</p>
+            </article>
+            <article class="room room--cardio">
+              <img class="room__photo" src="assets/img/photos/gym-bikes-window.webp" width="720" height="540" loading="lazy" decoding="async"
+                alt="Exercise bikes and an air bike lined up along a window onto trees" data-i18n-attr="alt:photo.bikes">
+              <h3 data-i18n="room.cardio.title">Cardio with a view</h3>
+              <p data-i18n="room.cardio.text">Bikes and treadmills line the windows, so you train looking out at the trees.</p>
+            </article>
+            <article class="room room--cafe">
+              <img class="room__photo" src="assets/img/photos/cafe-corner.webp" width="900" height="676" loading="lazy" decoding="async"
+                alt="A member stirring a coffee at a table by the café window" data-i18n-attr="alt:photo.cafe">
+              <h3 data-i18n="room.cafe.title">Fit House café</h3>
+              <p data-i18n="room.cafe.text">Coffee, matcha and protein shakes. Stay after your session, or come only for the coffee.</p>
+            </article>
+            <article class="room room--fuel">
+              <img class="room__photo" src="assets/img/photos/fuel.webp" width="720" height="540" loading="lazy" decoding="async"
+                alt="DNA Fuel protein bars and Greek yogurt on a wooden table" data-i18n-attr="alt:photo.fuel">
+              <h3 lang="en">Fuel</h3>
+              <p data-i18n="room.fuel.text">DNA Fuel protein bars and supplements from DNA Nutrition, stocked right here.</p>
+            </article>
+          </div>
+          <article class="garden">
+            <img class="garden__photo" src="assets/img/photos/garden.webp" width="640" height="1138" loading="lazy" decoding="async"
+              alt="A member flexing with a kettlebell on the Fit House lawn" data-i18n-attr="alt:photo.garden">
+            <div class="garden__text">
+              <h3 data-i18n="room.garden.title">The garden</h3>
+              <p data-i18n="room.garden.text">Green space to cool down, stretch, or sit with friends.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="menu" aria-labelledby="cups-title">
+      <div class="wrap">
+        <h2 class="title" id="cups-title">
+          <span class="title__black" data-i18n="cups.title1">What's in your cup</span>
+          <span class="title__light" data-i18n="cups.title2">matters too</span>
+        </h2>
+        <p class="lede" data-i18n="cups.lede">The Fit House café lists the calories and macros for every drink, from coffee to protein shakes.</p>
+        <ul class="cups">
+          <li class="cup">
+            <img class="cup__photo" src="assets/img/photos/drink-matcha.webp" width="460" height="806" loading="lazy" decoding="async"
+              alt="Matcha latte with cold foam in a Fit House cup" data-i18n-attr="alt:photo.matcha">
+            <h3 data-i18n="cup.matcha">Matcha latte with cold foam</h3>
+            <ul class="cup__stats"><li><span class="count" data-to="120">120</span> kcal</li><li data-i18n="cup.matchaProtein">4.1 g protein</li></ul>
+            <p data-i18n="cup.matchaNote">Also in strawberry, blueberry and mango.</p>
+          </li>
+          <li class="cup">
+            <img class="cup__photo" src="assets/img/photos/drink-raspberry.webp" width="460" height="806" loading="lazy" decoding="async"
+              alt="Raspberry shake in a Fit House cup" data-i18n-attr="alt:photo.raspberry">
+            <h3 data-i18n="cup.raspberry">Raspberry shake</h3>
+            <ul class="cup__stats"><li><span class="count" data-to="247">247</span> kcal</li><li data-i18n="cup.raspberryProtein">30.5 g protein</li></ul>
+          </li>
+          <li class="cup">
+            <img class="cup__photo" src="assets/img/photos/drink-peanut.webp" width="460" height="804" loading="lazy" decoding="async"
+              alt="Peanut butter and banana protein shake in a Fit House cup" data-i18n-attr="alt:photo.peanut">
+            <h3 data-i18n="cup.peanut">Peanut butter and banana protein shake</h3>
+            <ul class="cup__stats"><li><span class="count" data-to="455">455</span> kcal</li><li data-i18n="cup.peanutProtein">36 g protein</li></ul>
+            <p data-i18n="cup.peanutNote">Made with the milk and protein of your choice.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="classes" aria-labelledby="classes-title">
+      <div class="wrap">
+        <h2 class="title" id="classes-title">
+          <span class="title__lead" data-i18n="classes.title1">This isn't your usual</span>
+          <span class="title__black" data-i18n="classes.title2">class schedule</span>
+        </h2>
+        <p class="lede" data-i18n="classes.lede">Muay Thai three evenings a week, for kids and adults. Learn the technique and find your rhythm.</p>
+        <p class="next-class" id="next-class" aria-live="polite" hidden></p>
+
+        <div class="timetable">
+          <div class="tt-axis" aria-hidden="true">
+            <span style="--row:2" data-h="18">6:00 PM</span>
+            <span style="--row:3" data-h="19">7:00 PM</span>
+          </div>
+
+          <section class="tt-day" style="--col:2" data-day="1">
+            <span class="tt-lane" aria-hidden="true"></span>
+            <h3 data-i18n="day.mon">Monday</h3>
+            <ol>
+              <li class="slot slot--kids" style="--row:2">
+                <time data-range="18:00-19:00">6:00 PM – 7:00 PM</time>
+                <strong lang="en">Muay Thai</strong>
+                <span data-i18n="who.kids">Kids</span>
+              </li>
+              <li class="slot" style="--row:3">
+                <time data-range="19:00-20:00">7:00 PM – 8:00 PM</time>
+                <strong lang="en">Muay Thai</strong>
+                <span data-i18n="who.adults">Adults</span>
+              </li>
+            </ol>
+          </section>
+
+          <section class="tt-day" style="--col:3" data-day="3">
+            <span class="tt-lane" aria-hidden="true"></span>
+            <h3 data-i18n="day.wed">Wednesday</h3>
+            <ol>
+              <li class="slot slot--kids" style="--row:2">
+                <time data-range="18:00-19:00">6:00 PM – 7:00 PM</time>
+                <strong lang="en">Muay Thai</strong>
+                <span data-i18n="who.kids">Kids</span>
+              </li>
+              <li class="slot" style="--row:3">
+                <time data-range="19:00-20:00">7:00 PM – 8:00 PM</time>
+                <strong lang="en">Muay Thai</strong>
+                <span data-i18n="who.adults">Adults</span>
+              </li>
+            </ol>
+          </section>
+
+          <section class="tt-day" style="--col:4" data-day="5">
+            <span class="tt-lane" aria-hidden="true"></span>
+            <h3 data-i18n="day.fri">Friday</h3>
+            <ol>
+              <li class="slot slot--kids" style="--row:2">
+                <time data-range="18:00-19:00">6:00 PM – 7:00 PM</time>
+                <strong lang="en">Muay Thai</strong>
+                <span data-i18n="who.kids">Kids</span>
+              </li>
+              <li class="slot" style="--row:3">
+                <time data-range="19:00-20:00">7:00 PM – 8:00 PM</time>
+                <strong lang="en">Muay Thai</strong>
+                <span data-i18n="who.adults">Adults</span>
+              </li>
+            </ol>
+          </section>
+        </div>
+        <p class="note" data-i18n="classes.note">Tuesday, Thursday and Saturday are open-gym days. Ask us about this season's women's classes.</p>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="bundles" aria-labelledby="bundles-title">
+      <div class="wrap bundles">
+        <div class="bundles__intro">
+          <h2 class="title title--italic" id="bundles-title">
+            <span class="title__black" data-i18n="bundles.title">Choose the bundle that fits you</span>
+          </h2>
+          <div class="seg" role="tablist" data-i18n-attr="aria-label:bundles.tabs" aria-label="Bundles for">
+            <button class="seg__btn" type="button" role="tab" id="tab-adults" aria-controls="panel-adults" aria-selected="true" data-i18n="bundles.adults">Adults</button>
+            <button class="seg__btn" type="button" role="tab" id="tab-kids" aria-controls="panel-kids" aria-selected="false" tabindex="-1" data-i18n="bundles.kids">Kids</button>
+          </div>
+          <p class="note" data-i18n="bundles.help">Not sure which one fits? Send us a message and we'll help you pick.</p>
+          <a class="btn btn--dark" href="#book" data-pick="bundle" data-i18n="bundles.ask">Ask about a bundle</a>
+        </div>
+
+        <div class="bundles__lists">
+          <div class="panel" id="panel-adults" role="tabpanel" aria-labelledby="tab-adults">
+            <ul class="prices">
+              <li>
+                <div><h3 data-i18n="price.gym">Open gym membership</h3><p data-i18n="price.month">1 month</p></div>
+                <data class="price" value="50">$50</data>
+              </li>
+              <li>
+                <div><h3 data-i18n="price.dropin">Open gym drop-in</h3><p data-i18n="price.session">1 session</p></div>
+                <data class="price" value="5">$5</data>
+              </li>
+              <li>
+                <div><h3 data-i18n="price.classes">Class membership</h3><p data-i18n="price.monthly3">Monthly, 3 classes a week</p></div>
+                <data class="price" value="40">$40</data>
+              </li>
+              <li>
+                <div><h3 data-i18n="price.single">Single class pass</h3><p data-i18n="price.oneClass">1 class</p></div>
+                <data class="price" value="10">$10</data>
+              </li>
+              <li class="prices__all">
+                <div>
+                  <h3 data-i18n="price.full">Full access membership</h3>
+                  <p data-i18n="price.fullDetail">Open gym and classes. $10 less than buying both.</p>
+                </div>
+                <data class="price" value="80">$80</data>
+              </li>
+            </ul>
+          </div>
+          <div class="panel" id="panel-kids" role="tabpanel" aria-labelledby="tab-kids">
+            <ul class="prices">
+              <li>
+                <div><h3 data-i18n="price.mtKids">Muay Thai membership</h3><p data-i18n="price.monthly3">Monthly, 3 classes a week</p></div>
+                <data class="price" value="40">$40</data>
+              </li>
+              <li>
+                <div><h3 data-i18n="price.single">Single class pass</h3><p data-i18n="price.oneClass">1 class</p></div>
+                <data class="price" value="8">$8</data>
+              </li>
+            </ul>
+            <p class="note" data-i18n="bundles.kidsNote">Kids join classes only.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section book" id="book" aria-labelledby="book-title">
+      <div class="wrap book__grid">
+        <div class="book__intro">
+          <h2 class="title" id="book-title">
+            <span class="title__black" data-i18n="book.title1">Not everyone</span>
+            <span class="title__light" data-i18n="book.title2">gets a spot</span>
+          </h2>
+          <p class="lede" data-i18n="book.lede">Places in each class are limited. Pick what you're interested in and send us the message on WhatsApp.</p>
+          <ul class="contact">
+            <li><span data-i18n="book.call">Prefer to call?</span> <a href="tel:+96176684096" dir="ltr">76 684 096</a></li>
+            <li><span data-i18n="book.dm">Or message us on Instagram:</span> <a href="https://www.instagram.com/fithouselb/" target="_blank" rel="noopener" lang="en" dir="ltr">@fithouselb</a></li>
+          </ul>
+        </div>
+
+        <form class="composer" id="composer" action="https://wa.me/96176684096" method="get" target="_blank">
+          <fieldset class="composer__field">
+            <legend data-i18n="book.what">What would you like to ask about?</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="interest" value="mt-kids" checked><span data-i18n="interest.mtKids">Muay Thai for kids</span></label>
+              <label class="chip"><input type="radio" name="interest" value="mt-adults"><span data-i18n="interest.mtAdults">Muay Thai for adults</span></label>
+              <label class="chip"><input type="radio" name="interest" value="women"><span data-i18n="interest.women">Women's classes</span></label>
+              <label class="chip"><input type="radio" name="interest" value="bundle"><span data-i18n="interest.bundle">Membership bundles</span></label>
+              <label class="chip"><input type="radio" name="interest" value="tour"><span data-i18n="interest.tour">Visiting to see the place</span></label>
+            </div>
+          </fieldset>
+
+          <label class="composer__field composer__day">
+            <span data-i18n="book.day">Best day for you</span>
+            <select name="day">
+              <option value="any" data-i18n="day.any">Any day</option>
+              <option value="mon" data-i18n="day.mon">Monday</option>
+              <option value="tue" data-i18n="day.tue">Tuesday</option>
+              <option value="wed" data-i18n="day.wed">Wednesday</option>
+              <option value="thu" data-i18n="day.thu">Thursday</option>
+              <option value="fri" data-i18n="day.fri">Friday</option>
+              <option value="sat" data-i18n="day.sat">Saturday</option>
+            </select>
+          </label>
+
+          <div class="composer__preview">
+            <p class="composer__label" data-i18n="book.preview">Your message</p>
+            <p class="bubble" id="composer-msg" aria-live="polite">Hi Fit House! I'd like to ask about Muay Thai for kids.</p>
+          </div>
+
+          <button class="btn btn--moss btn--wide" type="submit" data-i18n="book.send">Send on WhatsApp</button>
+          <p class="composer__hint" data-i18n="book.hint">Opens WhatsApp with this message ready to send.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="visit" aria-labelledby="visit-title">
+      <div class="wrap">
+        <h2 class="title" id="visit-title">
+          <span class="title__black" data-i18n="visit.title">We are open</span>
+        </h2>
+        <p class="lede" data-i18n="visit.lede">Weekday mornings are for women only. Afternoons and Saturdays are mixed.</p>
+        <p class="status status--dark" data-status data-i18n="status.fallback">Monday to Friday 8:00 AM to 10:00 PM, Saturday 1:00 to 6:30 PM</p>
+
+        <div class="hours" id="hours">
+          <div class="hours__row" data-days="1,2,3,4,5">
+            <p class="hours__day"><span data-i18n="hours.weekdays">Monday to Friday</span><span class="hours__today" data-i18n="hours.today">Today</span></p>
+            <div class="hours__bar">
+              <span class="hours__seg hours__seg--ladies" style="--a:8;--b:12.5" data-i18n="hours.ladies">Ladies only</span>
+              <span class="hours__seg hours__seg--mixed" style="--a:13;--b:22" data-i18n="hours.mixed">Mixed</span>
+              <span class="hours__now" aria-hidden="true"></span>
+            </div>
+            <p class="hours__detail"><span data-i18n="hours.ladies">Ladies only</span> <time data-range="08:00-12:30">8:00 AM – 12:30 PM</time>, <span data-i18n="hours.mixed">Mixed</span> <time data-range="13:00-22:00">1:00 PM – 10:00 PM</time></p>
+          </div>
+          <div class="hours__row" data-days="6">
+            <p class="hours__day"><span data-i18n="day.sat">Saturday</span><span class="hours__today" data-i18n="hours.today">Today</span></p>
+            <div class="hours__bar">
+              <span class="hours__seg hours__seg--mixed" style="--a:13;--b:18.5" data-i18n="hours.mixed">Mixed</span>
+              <span class="hours__now" aria-hidden="true"></span>
+            </div>
+            <p class="hours__detail"><span data-i18n="hours.mixed">Mixed</span> <time data-range="13:00-18:30">1:00 PM – 6:30 PM</time></p>
+          </div>
+          <div class="hours__row" data-days="0">
+            <p class="hours__day"><span data-i18n="day.sun">Sunday</span><span class="hours__today" data-i18n="hours.today">Today</span></p>
+            <div class="hours__bar hours__bar--closed"><span data-i18n="hours.closed">Closed</span></div>
+          </div>
+          <div class="hours__axis" aria-hidden="true">
+            <span style="--h:8" data-h="8">8 AM</span>
+            <span style="--h:12" data-h="12">12 PM</span>
+            <span style="--h:16" data-h="16">4 PM</span>
+            <span style="--h:20" data-h="20">8 PM</span>
+          </div>
+        </div>
+
+        <div class="visit">
+          <div class="visit__map">
+            <iframe src="https://maps.google.com/maps?q=33.240566,35.239929&amp;z=16&amp;output=embed" loading="lazy" decoding="async" referrerpolicy="no-referrer-when-downgrade" title="Map showing Fit House in Housh, Tyre" data-i18n-attr="title:visit.mapTitle"></iframe>
+          </div>
+          <div class="visit__info">
+            <figure class="visit__entrance">
+              <img src="assets/img/photos/entrance.webp" width="800" height="600" loading="lazy" decoding="async"
+                alt="A member walking into the Fit House entrance, with signs for the gym and the café" data-i18n-attr="alt:photo.entrance">
+              <figcaption data-i18n="visit.entrance">Look for the Fit House and Café signs at the entrance.</figcaption>
+            </figure>
+            <h3 data-i18n="visit.find">Find us</h3>
+            <p class="visit__address" data-i18n="visit.address">Housh, Tyre, South Lebanon</p>
+            <a class="btn btn--dark" href="https://www.google.com/maps/dir/?api=1&amp;destination=33.240566,35.239929" target="_blank" rel="noopener" data-i18n="visit.directions">Get directions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div class="footer__brand" lang="en">
+        <svg class="footer__mark mark" viewBox="0 0 126 94" aria-hidden="true">
+          <g class="mark__headg"><circle class="mark__head" cx="81" cy="15" r="10.5"/></g>
+          <g class="mark__armg"><path class="mark__arm" d="M41 20 63.5 43.5 117 14"/></g>
+          <path class="mark__roof" d="M9 72 40 46.5 80 85"/>
+        </svg>
+        <p class="footer__word" id="footer-word">Fit House</p>
+        <p class="footer__tag">Let the outside in</p>
+      </div>
+      <ul class="footer__links">
+        <li><a href="https://www.instagram.com/fithouselb/" target="_blank" rel="noopener">Instagram <span lang="en" dir="ltr">@fithouselb</span></a></li>
+        <li><a href="tel:+96176684096"><span data-i18n="footer.call">Call</span> <span dir="ltr">76 684 096</span></a></li>
+      </ul>
+      <div class="footer__legal">
+        <p data-i18n="footer.legal">© 2026 Fit House. Housh, Tyre.</p>
+        <button class="motion-toggle" type="button" id="motion-toggle" aria-pressed="false">Animations: off</button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js?v=8" defer></script>
+</body>
+</html>
