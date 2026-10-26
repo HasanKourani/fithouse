@@ -1,0 +1,130 @@
+    <section class="phero" aria-labelledby="page-title">
+      <div class="phero__frame">
+        <div class="phero__inner">
+          <nav class="phero__crumb" data-i18n-attr="aria-label:crumb.label" aria-label="Breadcrumb">
+            <a href="index.html" data-i18n="nav.home">Home</a><span aria-hidden="true">/</span><span aria-current="page" data-i18n="nav.bundles">Bundles</span>
+          </nav>
+          <h1 class="phero__word" id="page-title" data-i18n="page.bundles">Bundles</h1>
+          <span class="phero__word phero__word--line" aria-hidden="true" data-i18n="page.bundles">Bundles</span>
+          <div class="phero__window outside">
+            <img src="assets/img/photos/gym-racks.webp" alt="" width="800" height="900" fetchpriority="high">
+          </div>
+          <p class="phero__lede" data-i18n="bundles.intro">Consistency doesn't happen by accident. It starts with one smart choice.</p>
+          <p class="phero__card glass" data-i18n="bundles.card">Drop in from $5, or go full access for $80 a month.</p>
+        </div>
+      </div>
+    </section>
+
+<section class="section section--tint" id="bundles" aria-labelledby="bundles-title">
+      <div class="wrap bundles">
+        <div class="bundles__intro">
+          <h2 class="title title--italic" id="bundles-title">
+            <span class="title__black" data-i18n="bundles.title">Choose the bundle that fits you</span>
+          </h2>
+          <div class="seg" role="tablist" data-i18n-attr="aria-label:bundles.tabs" aria-label="Bundles for">
+            <button class="seg__btn" type="button" role="tab" id="tab-adults" aria-controls="panel-adults" aria-selected="true" data-i18n="bundles.adults">Adults</button>
+            <button class="seg__btn" type="button" role="tab" id="tab-kids" aria-controls="panel-kids" aria-selected="false" tabindex="-1" data-i18n="bundles.kids">Kids</button>
+          </div>
+          <p class="note" data-i18n="bundles.help">Not sure which one fits? Send us a message and we'll help you pick.</p>
+          <a class="btn btn--dark" href="book.html?pick=bundle" data-i18n="bundles.ask">Ask about a bundle</a>
+        </div>
+
+        <div class="bundles__lists">
+          <div class="panel" id="panel-adults" role="tabpanel" aria-labelledby="tab-adults">
+            <!-- Full access as a membership card that tilts toward the pointer -->
+            <article class="pass" id="pass">
+              <span class="pass__glare" aria-hidden="true"></span>
+              <div class="pass__head">
+                <span class="pass__mark mark" aria-hidden="true"><span class="mark__roof"></span><span class="mark__fig"></span></span>
+                <span class="pass__brand" lang="en">Fit House</span>
+                <span class="pass__chip" aria-hidden="true"></span>
+              </div>
+              <h3 class="pass__tier" data-i18n="price.full">Full access membership</h3>
+              <p class="pass__price"><data class="price" value="80">$80</data> <span data-i18n="pass.month">a month</span></p>
+              <p class="pass__detail" data-i18n="price.fullDetail">Open gym and classes.</p>
+              <p class="pass__tag" lang="en" aria-hidden="true">Let the outside in</p>
+            </article>
+            <ul class="prices">
+              <li>
+                <div><h3 data-i18n="price.gym">Open gym membership</h3><p data-i18n="price.month">1 month</p></div>
+                <data class="price" value="50">$50</data>
+              </li>
+              <li>
+                <div><h3 data-i18n="price.dropin">Open gym drop-in</h3><p data-i18n="price.session">1 session</p></div>
+                <data class="price" value="5">$5</data>
+              </li>
+              <li>
+                <div><h3 data-i18n="price.classes">Class membership</h3><p data-i18n="price.monthly3">Monthly, 3 classes a week</p></div>
+                <data class="price" value="40">$40</data>
+              </li>
+              <li>
+                <div><h3 data-i18n="price.single">Single class pass</h3><p data-i18n="price.oneClass">1 class</p></div>
+                <data class="price" value="10">$10</data>
+              </li>
+            </ul>
+          </div>
+          <div class="panel" id="panel-kids" role="tabpanel" aria-labelledby="tab-kids">
+            <ul class="prices">
+              <li>
+                <div><h3 data-i18n="price.classes">Class membership</h3><p data-i18n="price.monthly3">Monthly, 3 classes a week</p></div>
+                <data class="price" value="30">$30</data>
+              </li>
+              <li>
+                <div><h3 data-i18n="price.single">Single class pass</h3><p data-i18n="price.oneClass">1 class</p></div>
+                <data class="price" value="8">$8</data>
+              </li>
+            </ul>
+            <p class="note" data-i18n="bundles.kidsNote">Kids join classes only.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="compare-title">
+      <div class="wrap">
+        <h2 class="title" id="compare-title">
+          <span class="title__black" data-i18n="compare.title1">What each</span>
+          <span class="title__light" data-i18n="compare.title2">membership includes</span>
+        </h2>
+        <div class="compare" role="region" tabindex="0" aria-labelledby="compare-title">
+          <table>
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col"><span data-i18n="price.gym">Open gym membership</span><strong>$50</strong></th>
+                <th scope="col"><span data-i18n="price.classes">Class membership</span><strong>$40</strong></th>
+                <th scope="col" class="compare__best"><span data-i18n="price.full">Full access membership</span><strong>$80</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" data-i18n="compare.gym">Open gym access</th>
+                <td><span class="yes" data-i18n-attr="aria-label:compare.yes" aria-label="Included"></span></td>
+                <td><span class="no" data-i18n-attr="aria-label:compare.no" aria-label="Not included"></span></td>
+                <td class="compare__best"><span class="yes" data-i18n-attr="aria-label:compare.yes" aria-label="Included"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" data-i18n="compare.classes">Classes, 3 a week</th>
+                <td><span class="no" data-i18n-attr="aria-label:compare.no" aria-label="Not included"></span></td>
+                <td><span class="yes" data-i18n-attr="aria-label:compare.yes" aria-label="Included"></span></td>
+                <td class="compare__best"><span class="yes" data-i18n-attr="aria-label:compare.yes" aria-label="Included"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" data-i18n="compare.length">Length</th>
+                <td data-i18n="price.month">1 month</td>
+                <td data-i18n="price.month">1 month</td>
+                <td class="compare__best" data-i18n="price.month">1 month</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note" data-i18n="compare.note">Not ready for a month? An open gym drop-in is $5 and a single class is $10. Kids' classes are $30 a month or $8 a class.</p>
+        <a class="btn btn--dark" href="book.html?pick=bundle" data-magnetic data-i18n="bundles.ask">Ask about a bundle</a>
+      </div>
+    </section>
+
+    <a class="next-page" href="visit.html">
+      <span class="next-page__label" data-i18n="next.label">Next page</span>
+      <span class="next-page__word" data-i18n="page.visit">Visit</span>
+      <svg class="next-page__go" aria-hidden="true"><use href="#chevrons"/></svg>
+    </a>

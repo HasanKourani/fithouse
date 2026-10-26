@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Classes | Fit House, Housh, Tyre</title>
+  <meta name="description" content="Muay Thai for kids and adults, Monday, Wednesday and Friday evenings, $40 a month.">
+  <meta name="theme-color" content="#444341">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Classes | Fit House, Housh, Tyre">
+  <meta property="og:description" content="Muay Thai for kids and adults, Monday, Wednesday and Friday evenings, $40 a month.">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="128x128">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700;1,900&family=Tajawal:wght@300;400;700;900&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css?v=16">
+  <script>
+    // Animations are always on. If the last page left through the curtain, start this one behind it.
+    (function () {
+      var root = document.documentElement, curtain = null;
+      root.classList.add('js', 'motion');
+      try { curtain = sessionStorage.getItem('fithouse-curtain'); } catch (e) {}
+      if (curtain) root.classList.add('is-arriving');
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ExerciseGym",
+    "name": "Fit House",
+    "slogan": "Let the outside in",
+    "telephone": "+961 76 684 096",
+    "address": {"@type": "PostalAddress", "streetAddress": "Housh", "addressLocality": "Tyre", "addressCountry": "LB"},
+    "geo": {"@type": "GeoCoordinates", "latitude": 33.240566, "longitude": 35.239929},
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "22:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "13:00", "closes": "18:30"}
+    ],
+    "sameAs": ["https://www.instagram.com/fithouselb/"]
+  }
+  </script>
+</head>
+<body data-page="classes">
+  <!-- comment -->
+  <!-- Green curtain that wipes between pages (motion on only). First in the body so it
+       covers the page before anything else paints. -->
+  <div class="curtain" id="curtain" aria-hidden="true">
+    <span class="curtain__mark mark" aria-hidden="true"><span class="mark__roof"></span><span class="mark__fig"></span></span>
+  </div>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <path id="leaf" d="M0 0C20-16 58-18 92 0C58 18 20 16 0 0Z" fill="currentColor"/>
+    </defs>
+    <symbol id="chevrons" viewBox="0 0 30 14">
+      <path d="M2 2l5 5-5 5M11.5 2l5 5-5 5M21 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <!-- Leaf shadows that fall across every "outside" surface -->
+    <symbol id="leaves" viewBox="0 0 600 800" preserveAspectRatio="xMaxYMin slice">
+      <path d="M640-30C540 110 430 230 255 440" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+      <use href="#leaf" transform="translate(588 44) rotate(78) scale(1.15)"/>
+      <use href="#leaf" transform="translate(566 74) rotate(172) scale(1.05)"/>
+      <use href="#leaf" transform="translate(505 148) rotate(66) scale(1.3)"/>
+      <use href="#leaf" transform="translate(482 176) rotate(186) scale(1.15)"/>
+      <use href="#leaf" transform="translate(424 238) rotate(58) scale(1.4)"/>
+      <use href="#leaf" transform="translate(398 266) rotate(192) scale(1.25)"/>
+      <use href="#leaf" transform="translate(344 330) rotate(74) scale(1.2)"/>
+      <use href="#leaf" transform="translate(312 362) rotate(176) scale(1.3)"/>
+      <use href="#leaf" transform="translate(262 430) rotate(128) scale(1.25)"/>
+      <path d="M-30 830C70 710 160 650 310 600" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+      <use href="#leaf" transform="translate(40 760) rotate(-62) scale(1.1)"/>
+      <use href="#leaf" transform="translate(62 746) rotate(22) scale(1.05)"/>
+      <use href="#leaf" transform="translate(122 690) rotate(-72) scale(1.25)"/>
+      <use href="#leaf" transform="translate(146 678) rotate(12) scale(1.15)"/>
+      <use href="#leaf" transform="translate(204 644) rotate(-48) scale(1.2)"/>
+      <use href="#leaf" transform="translate(230 634) rotate(30) scale(1.1)"/>
+      <use href="#leaf" transform="translate(304 602) rotate(-16) scale(1.2)"/>
+    </symbol>
+  </svg>
+
+  <a class="skip" href="#content" data-i18n="skip">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__bar">
+      <a class="brand" href="index.html" data-i18n-attr="aria-label:brand.label" aria-label="Fit House home">
+        <span class="brand__mark mark" aria-hidden="true"><span class="mark__roof"></span><span class="mark__fig"></span></span>
+        <span class="brand__word" lang="en">Fit House</span>
+      </a>
+      <nav class="nav__links" id="nav-links" data-i18n-attr="aria-label:nav.label" aria-label="Main">
+        <a href="house.html" data-i18n="nav.house">The house</a>
+        <a href="classes.html" aria-current="page" data-i18n="nav.classes">Classes</a>
+        <a href="cafe.html" data-i18n="nav.cafe">Café</a>
+        <a href="bundles.html" data-i18n="nav.bundles">Bundles</a>
+        <a href="visit.html" data-i18n="nav.visit">Visit</a>
+        <a class="nav__links-book" href="book.html" data-i18n="nav.book">Book a class</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="lang" type="button" id="lang-toggle" lang="ar">عربي</button>
+        <a class="btn btn--moss btn--small nav__book" href="book.html" data-i18n="nav.book">Book a class</a>
+        <button class="nav__menu" type="button" id="nav-menu" aria-expanded="false" aria-controls="nav-links" data-i18n="nav.menu">Menu</button>
+      </div>
+      <!-- Scroll progress under the pill, with the logo figure running along it -->
+      <div class="progress" id="progress" aria-hidden="true">
+        <span class="progress__bar"></span>
+        <span class="progress__runner mark" aria-hidden="true"><span class="mark__roof"></span><span class="mark__fig"></span></span>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="phero" aria-labelledby="page-title">
+      <div class="phero__frame">
+        <div class="phero__inner">
+          <nav class="phero__crumb" data-i18n-attr="aria-label:crumb.label" aria-label="Breadcrumb">
+            <a href="index.html" data-i18n="nav.home">Home</a><span aria-hidden="true">/</span><span aria-current="page" data-i18n="nav.classes">Classes</span>
+          </nav>
+          <h1 class="phero__word" id="page-title" data-i18n="page.classes">Classes</h1>
+          <span class="phero__word phero__word--line" aria-hidden="true" data-i18n="page.classes">Classes</span>
+          <div class="phero__window outside">
+            <img src="assets/img/photos/barbell-grip.webp" alt="" width="700" height="1248" fetchpriority="high">
+          </div>
+          <p class="phero__lede" data-i18n="classes.intro">More than a workout. It's discipline, confidence and controlled power, for kids and adults.</p>
+          <p class="phero__card glass" data-next-class>Monday, Wednesday and Friday evenings</p>
+        </div>
+      </div>
+    </section>
+
+<section class="section section--drift" id="classes" aria-labelledby="classes-title">
+      <p class="drift" aria-hidden="true" lang="en">Muay Thai&ensp;Muay Thai&ensp;Muay Thai&ensp;Muay Thai</p>
+      <div class="wrap">
+        <h2 class="title" id="classes-title">
+          <span class="title__lead" data-i18n="classes.title1">This isn't your usual</span>
+          <span class="title__black" data-i18n="classes.title2">class schedule</span>
+        </h2>
+        <p class="lede" data-i18n="classes.lede">Muay Thai three evenings a week, for kids and adults. Learn the technique and find your rhythm.</p>
+        <p class="next-class" data-next-class aria-live="polite" hidden></p>
+
+        <div class="timetable">
+          <div class="tt-axis" aria-hidden="true">
+            <span style="--row:2" data-h="18">6:00 PM</span>
+            <span style="--row:3" data-h="19">7:00 PM</span>
+          </div>
+
+          <section class="tt-day" style="--col:2" data-day="1">
+            <span class="tt-lane" aria-hidden="true"></span>
+            <h3 data-i18n="day.mon">Monday</h3>
+            <ol>
+              <li class="slot slot--kids" style="--row:2">
+                <time data-range="18:00-19:00">6:00 PM – 7:00 PM</time>
+                <strong lang="en">Muay Thai</strong>
+                <span data-i18n="who.kids">Kids</span>
+              </li>
+              <li class="slot" style="--row:3">
+                <time data-range="19:00-20:00">7:00 PM – 8:00 PM</time>
+                <strong lang="en">Muay Thai</strong>
+                <span data-i18n="who.adults">Adults</span>
+              </li>
+            </ol>
+          </section>
+
+          <section class="tt-day" style="--col:3" data-day="3">
+            <span class="tt-lane" aria-hidden="true"></span>
+            <h3 data-i18n="day.wed">Wednesday</h3>
+            <ol>
+              <li class="slot slot--kids" style="--row:2">
+                <time data-range="18:00-19:00">6:00 PM – 7:00 PM</time>
+                <strong lang="en">Muay Thai</strong>
+                <span data-i18n="who.kids">Kids</span>
+              </li>
+              <li class="slot" style="--row:3">
+                <time data-range="19:00-20:00">7:00 PM – 8:00 PM</time>
+                <strong lang="en">Muay Thai</strong>
+                <span data-i18n="who.adults">Adults</span>
+              </li>
+            </ol>
+          </section>
+
+          <section class="tt-day" style="--col:4" data-day="5">
+            <span class="tt-lane" aria-hidden="true"></span>
+            <h3 data-i18n="day.fri">Friday</h3>
+            <ol>
+              <li class="slot slot--kids" style="--row:2">
+                <time data-range="18:00-19:00">6:00 PM – 7:00 PM</time>
+                <strong lang="en">Muay Thai</strong>
+                <span data-i18n="who.kids">Kids</span>
+              </li>
+              <li class="slot" style="--row:3">
+                <time data-range="19:00-20:00">7:00 PM – 8:00 PM</time>
+                <strong lang="en">Muay Thai</strong>
+                <span data-i18n="who.adults">Adults</span>
+              </li>
+            </ol>
+          </section>
+        </div>
+        <p class="note" data-i18n="classes.note">Tuesday, Thursday and Saturday are open-gym days. Ask us about this season's women's classes.</p>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="who-title">
+      <div class="wrap">
+        <h2 class="title" id="who-title">
+          <span class="title__black" data-i18n="who.title1">One class</span>
+          <span class="title__light" data-i18n="who.title2">two ages</span>
+        </h2>
+        <div class="who">
+          <article class="who__card">
+            <p class="who__tag" data-i18n="who.kids">Kids</p>
+            <h3 class="who__title" data-i18n="who.kidsTitle">Focus and self-belief</h3>
+            <p data-i18n="who.kidsText">Kids learn the technique step by step, and leave with more focus and confidence than they came in with.</p>
+            <dl class="who__facts">
+              <div><dt data-i18n="who.when">When</dt><dd data-i18n="who.kidsWhen">Mon, Wed, Fri, 6–7 PM</dd></div>
+            </dl>
+            <a class="btn btn--dark" href="book.html?pick=mt-kids" data-magnetic data-i18n="who.kidsAsk">Ask about kids' classes</a>
+          </article>
+          <article class="who__card who__card--adults">
+            <p class="who__tag" data-i18n="who.adults">Adults</p>
+            <h3 class="who__title" data-i18n="who.adultsTitle">Strength and sharp skills</h3>
+            <p data-i18n="who.adultsText">Train hard, learn the technique and find your rhythm, whether you are starting out or coming back.</p>
+            <dl class="who__facts">
+              <div><dt data-i18n="who.when">When</dt><dd data-i18n="who.adultsWhen">Mon, Wed, Fri, 7–8 PM</dd></div>
+              <div><dt data-i18n="who.price">Price</dt><dd data-i18n="who.priceValue">$40 a month</dd></div>
+            </dl>
+            <a class="btn btn--moss" href="book.html?pick=mt-adults" data-magnetic data-i18n="who.adultsAsk">Ask about adult classes</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote outside" aria-label="Muay Thai at Fit House" data-i18n-attr="aria-label:quote.label">
+      <svg class="leaves" aria-hidden="true"><use href="#leaves"/></svg>
+      <div class="wrap">
+        <p class="quote__line" data-i18n="quote.1">Train hard.</p>
+        <p class="quote__line" data-i18n="quote.2">Learn the technique.</p>
+        <p class="quote__line" data-i18n="quote.3">Find your rhythm.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="women-title">
+      <div class="wrap women">
+        <h2 class="title" id="women-title">
+          <span class="title__black" data-i18n="women.title1">Women's</span>
+          <span class="title__light" data-i18n="women.title2">classes</span>
+        </h2>
+        <div class="women__body">
+          <p class="lede" data-i18n="women.lede">Weekday mornings are ladies only, and women's classes run through the season. Message us for this season's schedule.</p>
+          <a class="btn btn--dark" href="book.html?pick=women" data-magnetic data-i18n="women.ask">Ask about women's classes</a>
+        </div>
+      </div>
+    </section>
+
+    <a class="next-page" href="cafe.html">
+      <span class="next-page__label" data-i18n="next.label">Next page</span>
+      <span class="next-page__word" data-i18n="page.cafe">Café</span>
+      <svg class="next-page__go" aria-hidden="true"><use href="#chevrons"/></svg>
+    </a>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div class="footer__brand" lang="en">
+        <span class="footer__mark mark" aria-hidden="true"><span class="mark__roof"></span><span class="mark__fig"></span></span>
+        <p class="footer__tag">Let the outside in</p>
+      </div>
+      <nav class="footer__pages" data-i18n-attr="aria-label:footer.pages" aria-label="All pages">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="house.html" data-i18n="nav.house">The house</a>
+        <a href="classes.html" data-i18n="nav.classes">Classes</a>
+        <a href="cafe.html" data-i18n="nav.cafe">Café</a>
+        <a href="bundles.html" data-i18n="nav.bundles">Bundles</a>
+        <a href="visit.html" data-i18n="nav.visit">Visit</a>
+        <a href="book.html" data-i18n="nav.book">Book a class</a>
+      </nav>
+      <ul class="footer__links">
+        <li><a href="https://www.instagram.com/fithouselb/" target="_blank" rel="noopener">Instagram <span lang="en" dir="ltr">@fithouselb</span></a></li>
+        <li><a href="tel:+96176684096"><span data-i18n="footer.call">Call</span> <span dir="ltr">76 684 096</span></a></li>
+      </ul>
+      <div class="footer__legal">
+        <p data-i18n="footer.legal">© 2026 Fit House. Housh, Tyre.</p>
+      </div>
+    </div>
+    <!-- Edge-to-edge wordmark; its letters wave on hover -->
+    <p class="footer__word" id="footer-word" lang="en">Fit House</p>
+  </footer>
+
+  <!-- Cursor ring that follows the mouse (motion on, mouse only) -->
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__ring"></span><span class="cursor__dot"></span></div>
+
+  <script src="assets/js/main.js?v=16" defer></script>
+</body>
+</html>

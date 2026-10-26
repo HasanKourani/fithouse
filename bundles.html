@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bundles | Fit House, Housh, Tyre</title>
+  <meta name="description" content="Open gym, class and full access memberships for adults, and Muay Thai bundles for kids.">
+  <meta name="theme-color" content="#444341">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bundles | Fit House, Housh, Tyre">
+  <meta property="og:description" content="Open gym, class and full access memberships for adults, and Muay Thai bundles for kids.">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="128x128">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700;1,900&family=Tajawal:wght@300;400;700;900&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css?v=16">
+  <script>
+    // Animations are always on. If the last page left through the curtain, start this one behind it.
+    (function () {
+      var root = document.documentElement, curtain = null;
+      root.classList.add('js', 'motion');
+      try { curtain = sessionStorage.getItem('fithouse-curtain'); } catch (e) {}
+      if (curtain) root.classList.add('is-arriving');
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ExerciseGym",
+    "name": "Fit House",
+    "slogan": "Let the outside in",
+    "telephone": "+961 76 684 096",
+    "address": {"@type": "PostalAddress", "streetAddress": "Housh", "addressLocality": "Tyre", "addressCountry": "LB"},
+    "geo": {"@type": "GeoCoordinates", "latitude": 33.240566, "longitude": 35.239929},
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "22:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "13:00", "closes": "18:30"}
+    ],
+    "sameAs": ["https://www.instagram.com/fithouselb/"]
+  }
+  </script>
+</head>
+<body data-page="bundles">
+  <!-- comment -->
+  <!-- Green curtain that wipes between pages (motion on only). First in the body so it
+       covers the page before anything else paints. -->
+  <div class="curtain" id="curtain" aria-hidden="true">
+    <span class="curtain__mark mark" aria-hidden="true"><span class="mark__roof"></span><span class="mark__fig"></span></span>
+  </div>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <path id="leaf" d="M0 0C20-16 58-18 92 0C58 18 20 16 0 0Z" fill="currentColor"/>
+    </defs>
+    <symbol id="chevrons" viewBox="0 0 30 14">
+      <path d="M2 2l5 5-5 5M11.5 2l5 5-5 5M21 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <!-- Leaf shadows that fall across every "outside" surface -->
+    <symbol id="leaves" viewBox="0 0 600 800" preserveAspectRatio="xMaxYMin slice">
+      <path d="M640-30C540 110 430 230 255 440" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+      <use href="#leaf" transform="translate(588 44) rotate(78) scale(1.15)"/>
+      <use href="#leaf" transform="translate(566 74) rotate(172) scale(1.05)"/>
+      <use href="#leaf" transform="translate(505 148) rotate(66) scale(1.3)"/>
+      <use href="#leaf" transform="translate(482 176) rotate(186) scale(1.15)"/>
+      <use href="#leaf" transform="translate(424 238) rotate(58) scale(1.4)"/>
+      <use href="#leaf" transform="translate(398 266) rotate(192) scale(1.25)"/>
+      <use href="#leaf" transform="translate(344 330) rotate(74) scale(1.2)"/>
+      <use href="#leaf" transform="translate(312 362) rotate(176) scale(1.3)"/>
+      <use href="#leaf" transform="translate(262 430) rotate(128) scale(1.25)"/>
+      <path d="M-30 830C70 710 160 650 310 600" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+      <use href="#leaf" transform="translate(40 760) rotate(-62) scale(1.1)"/>
+      <use href="#leaf" transform="translate(62 746) rotate(22) scale(1.05)"/>
+      <use href="#leaf" transform="translate(122 690) rotate(-72) scale(1.25)"/>
+      <use href="#leaf" transform="translate(146 678) rotate(12) scale(1.15)"/>
+      <use href="#leaf" transform="translate(204 644) rotate(-48) scale(1.2)"/>
+      <use href="#leaf" transform="translate(230 634) rotate(30) scale(1.1)"/>
+      <use href="#leaf" transform="translate(304 602) rotate(-16) scale(1.2)"/>
+    </symbol>
+  </svg>
+
+  <a class="skip" href="#content" data-i18n="skip">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__bar">
+      <a class="brand" href="index.html" data-i18n-attr="aria-label:brand.label" aria-label="Fit House home">
+        <span class="brand__mark mark" aria-hidden="true"><span class="mark__roof"></span><span class="mark__fig"></span></span>
+        <span class="brand__word" lang="en">Fit House</span>
+      </a>
+      <nav class="nav__links" id="nav-links" data-i18n-attr="aria-label:nav.label" aria-label="Main">
+        <a href="house.html" data-i18n="nav.house">The house</a>
+        <a href="classes.html" data-i18n="nav.classes">Classes</a>
+        <a href="cafe.html" data-i18n="nav.cafe">Café</a>
+        <a href="bundles.html" aria-current="page" data-i18n="nav.bundles">Bundles</a>
+        <a href="visit.html" data-i18n="nav.visit">Visit</a>
+        <a class="nav__links-book" href="book.html" data-i18n="nav.book">Book a class</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="lang" type="button" id="lang-toggle" lang="ar">عربي</button>
+        <a class="btn btn--moss btn--small nav__book" href="book.html" data-i18n="nav.book">Book a class</a>
+        <button class="nav__menu" type="button" id="nav-menu" aria-expanded="false" aria-controls="nav-links" data-i18n="nav.menu">Menu</button>
+      </div>
+      <!-- Scroll progress under the pill, with the logo figure running along it -->
+      <div class="progress" id="progress" aria-hidden="true">
+        <span class="progress__bar"></span>
+        <span class="progress__runner mark" aria-hidden="true"><span class="mark__roof"></span><span class="mark__fig"></span></span>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="phero" aria-labelledby="page-title">
+      <div class="phero__frame">
+        <div class="phero__inner">
+          <nav class="phero__crumb" data-i18n-attr="aria-label:crumb.label" aria-label="Breadcrumb">
+            <a href="index.html" data-i18n="nav.home">Home</a><span aria-hidden="true">/</span><span aria-current="page" data-i18n="nav.bundles">Bundles</span>
+          </nav>
+          <h1 class="phero__word" id="page-title" data-i18n="page.bundles">Bundles</h1>
+          <span class="phero__word phero__word--line" aria-hidden="true" data-i18n="page.bundles">Bundles</span>
+          <div class="phero__window outside">
+            <img src="assets/img/photos/gym-racks.webp" alt="" width="800" height="900" fetchpriority="high">
+          </div>
+          <p class="phero__lede" data-i18n="bundles.intro">Consistency doesn't happen by accident. It starts with one smart choice.</p>
+          <p class="phero__card glass" data-i18n="bundles.card">Drop in from $5, or go full access for $80 a month.</p>
+        </div>
+      </div>
+    </section>
+
+<section class="section section--tint" id="bundles" aria-labelledby="bundles-title">
+      <div class="wrap bundles">
+        <div class="bundles__intro">
+          <h2 class="title title--italic" id="bundles-title">
+            <span class="title__black" data-i18n="bundles.title">Choose the bundle that fits you</span>
+          </h2>
+          <div class="seg" role="tablist" data-i18n-attr="aria-label:bundles.tabs" aria-label="Bundles for">
+            <button class="seg__btn" type="button" role="tab" id="tab-adults" aria-controls="panel-adults" aria-selected="true" data-i18n="bundles.adults">Adults</button>
+            <button class="seg__btn" type="button" role="tab" id="tab-kids" aria-controls="panel-kids" aria-selected="false" tabindex="-1" data-i18n="bundles.kids">Kids</button>
+          </div>
+          <p class="note" data-i18n="bundles.help">Not sure which one fits? Send us a message and we'll help you pick.</p>
+          <a class="btn btn--dark" href="book.html?pick=bundle" data-i18n="bundles.ask">Ask about a bundle</a>
+        </div>
+
+        <div class="bundles__lists">
+          <div class="panel" id="panel-adults" role="tabpanel" aria-labelledby="tab-adults">
+            <!-- Full access as a membership card that tilts toward the pointer -->
+            <article class="pass" id="pass">
+              <span class="pass__glare" aria-hidden="true"></span>
+              <div class="pass__head">
+                <span class="pass__mark mark" aria-hidden="true"><span class="mark__roof"></span><span class="mark__fig"></span></span>
+                <span class="pass__brand" lang="en">Fit House</span>
+                <span class="pass__chip" aria-hidden="true"></span>
+              </div>
+              <h3 class="pass__tier" data-i18n="price.full">Full access membership</h3>
+              <p class="pass__price"><data class="price" value="80">$80</data> <span data-i18n="pass.month">a month</span></p>
+              <p class="pass__detail" data-i18n="price.fullDetail">Open gym and classes.</p>
+              <p class="pass__tag" lang="en" aria-hidden="true">Let the outside in</p>
+            </article>
+            <ul class="prices">
+              <li>
+                <div><h3 data-i18n="price.gym">Open gym membership</h3><p data-i18n="price.month">1 month</p></div>
+                <data class="price" value="50">$50</data>
+              </li>
+              <li>
+                <div><h3 data-i18n="price.dropin">Open gym drop-in</h3><p data-i18n="price.session">1 session</p></div>
+                <data class="price" value="5">$5</data>
+              </li>
+              <li>
+                <div><h3 data-i18n="price.classes">Class membership</h3><p data-i18n="price.monthly3">Monthly, 3 classes a week</p></div>
+                <data class="price" value="40">$40</data>
+              </li>
+              <li>
+                <div><h3 data-i18n="price.single">Single class pass</h3><p data-i18n="price.oneClass">1 class</p></div>
+                <data class="price" value="10">$10</data>
+              </li>
+            </ul>
+          </div>
+          <div class="panel" id="panel-kids" role="tabpanel" aria-labelledby="tab-kids">
+            <ul class="prices">
+              <li>
+                <div><h3 data-i18n="price.classes">Class membership</h3><p data-i18n="price.monthly3">Monthly, 3 classes a week</p></div>
+                <data class="price" value="30">$30</data>
+              </li>
+              <li>
+                <div><h3 data-i18n="price.single">Single class pass</h3><p data-i18n="price.oneClass">1 class</p></div>
+                <data class="price" value="8">$8</data>
+              </li>
+            </ul>
+            <p class="note" data-i18n="bundles.kidsNote">Kids join classes only.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="compare-title">
+      <div class="wrap">
+        <h2 class="title" id="compare-title">
+          <span class="title__black" data-i18n="compare.title1">What each</span>
+          <span class="title__light" data-i18n="compare.title2">membership includes</span>
+        </h2>
+        <div class="compare" role="region" tabindex="0" aria-labelledby="compare-title">
+          <table>
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col"><span data-i18n="price.gym">Open gym membership</span><strong>$50</strong></th>
+                <th scope="col"><span data-i18n="price.classes">Class membership</span><strong>$40</strong></th>
+                <th scope="col" class="compare__best"><span data-i18n="price.full">Full access membership</span><strong>$80</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" data-i18n="compare.gym">Open gym access</th>
+                <td><span class="yes" data-i18n-attr="aria-label:compare.yes" aria-label="Included"></span></td>
+                <td><span class="no" data-i18n-attr="aria-label:compare.no" aria-label="Not included"></span></td>
+                <td class="compare__best"><span class="yes" data-i18n-attr="aria-label:compare.yes" aria-label="Included"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" data-i18n="compare.classes">Classes, 3 a week</th>
+                <td><span class="no" data-i18n-attr="aria-label:compare.no" aria-label="Not included"></span></td>
+                <td><span class="yes" data-i18n-attr="aria-label:compare.yes" aria-label="Included"></span></td>
+                <td class="compare__best"><span class="yes" data-i18n-attr="aria-label:compare.yes" aria-label="Included"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" data-i18n="compare.length">Length</th>
+                <td data-i18n="price.month">1 month</td>
+                <td data-i18n="price.month">1 month</td>
+                <td class="compare__best" data-i18n="price.month">1 month</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note" data-i18n="compare.note">Not ready for a month? An open gym drop-in is $5 and a single class is $10. Kids' classes are $30 a month or $8 a class.</p>
+        <a class="btn btn--dark" href="book.html?pick=bundle" data-magnetic data-i18n="bundles.ask">Ask about a bundle</a>
+      </div>
+    </section>
+
+    <a class="next-page" href="visit.html">
+      <span class="next-page__label" data-i18n="next.label">Next page</span>
+      <span class="next-page__word" data-i18n="page.visit">Visit</span>
+      <svg class="next-page__go" aria-hidden="true"><use href="#chevrons"/></svg>
+    </a>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div class="footer__brand" lang="en">
+        <span class="footer__mark mark" aria-hidden="true"><span class="mark__roof"></span><span class="mark__fig"></span></span>
+        <p class="footer__tag">Let the outside in</p>
+      </div>
+      <nav class="footer__pages" data-i18n-attr="aria-label:footer.pages" aria-label="All pages">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="house.html" data-i18n="nav.house">The house</a>
+        <a href="classes.html" data-i18n="nav.classes">Classes</a>
+        <a href="cafe.html" data-i18n="nav.cafe">Café</a>
+        <a href="bundles.html" data-i18n="nav.bundles">Bundles</a>
+        <a href="visit.html" data-i18n="nav.visit">Visit</a>
+        <a href="book.html" data-i18n="nav.book">Book a class</a>
+      </nav>
+      <ul class="footer__links">
+        <li><a href="https://www.instagram.com/fithouselb/" target="_blank" rel="noopener">Instagram <span lang="en" dir="ltr">@fithouselb</span></a></li>
+        <li><a href="tel:+96176684096"><span data-i18n="footer.call">Call</span> <span dir="ltr">76 684 096</span></a></li>
+      </ul>
+      <div class="footer__legal">
+        <p data-i18n="footer.legal">© 2026 Fit House. Housh, Tyre.</p>
+      </div>
+    </div>
+    <!-- Edge-to-edge wordmark; its letters wave on hover -->
+    <p class="footer__word" id="footer-word" lang="en">Fit House</p>
+  </footer>
+
+  <!-- Cursor ring that follows the mouse (motion on, mouse only) -->
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__ring"></span><span class="cursor__dot"></span></div>
+
+  <script src="assets/js/main.js?v=16" defer></script>
+</body>
+</html>

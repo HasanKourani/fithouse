@@ -1,0 +1,132 @@
+<section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__stage">
+        <!-- The hero is a framed charcoal wall; the window in the middle of OUTSIDE opens onto the real view -->
+        <div class="hero__frame" id="hero-frame">
+          <div class="hero__outside outside" aria-hidden="true">
+            <svg class="leaves"><use href="#leaves"/></svg>
+            <img class="hero__photo" src="assets/img/photos/window-view.webp" alt="" width="800" height="1420" decoding="async">
+            <span class="hero__outside-mark mark" aria-hidden="true"><span class="mark__roof"></span><span class="mark__fig"></span></span>
+          </div>
+          <div class="hero__inner">
+            <h1 class="hero__title" id="hero-title" lang="en" dir="ltr">
+              <span class="hero__let">Let the</span>
+              <span class="hero__out">Outside</span>
+              <span class="hero__in">in.</span>
+            </h1>
+            <!-- The same word again as an outline, drawn over the window photo -->
+            <span class="hero__out hero__out--line" aria-hidden="true" lang="en" dir="ltr">Outside</span>
+            <div class="hero__window outside" id="hero-window">
+              <svg class="leaves" aria-hidden="true"><use href="#leaves"/></svg>
+              <img class="hero__photo" src="assets/img/photos/window-view.webp" width="800" height="1420" fetchpriority="high"
+                alt="Two treadmills facing a wide window onto trees and lawn" data-i18n-attr="alt:photo.window">
+            </div>
+            <p class="hero__lede" data-i18n="hero.lede">A gym with a garden, a café and windows onto the trees. In Housh, Tyre.</p>
+            <div class="hero__ctas">
+              <a class="btn btn--moss" href="book.html" data-magnetic data-i18n="hero.book">Book a class</a>
+              <a class="btn btn--ghost" href="bundles.html" data-magnetic><span data-i18n="hero.bundles">See the bundles</span><svg class="chev" viewBox="0 0 30 14" aria-hidden="true"><path d="M2 2l5 5-5 5"/><path d="M11.5 2l5 5-5 5"/><path d="M21 2l5 5-5 5"/></svg></a>
+            </div>
+            <div class="hero__card hero__card--status glass">
+              <p class="status" data-status data-i18n="status.fallback">Monday to Friday 8:00 AM to 10:00 PM, Saturday 1:00 to 6:30 PM</p>
+            </div>
+            <a class="hero__card hero__card--drink glass" href="cafe.html">
+              <img src="assets/img/photos/drink-matcha.webp" alt="" width="460" height="806">
+              <span class="hero__drink-text">
+                <strong data-i18n="hero.drink">Matcha latte</strong>
+                <span data-i18n="hero.drinkNote">120 kcal at the café</span>
+              </span>
+            </a>
+            <a class="badge" href="book.html" aria-label="Book a class" data-i18n-attr="aria-label:hero.book">
+              <svg class="badge__ring" viewBox="0 0 200 200" aria-hidden="true">
+                <defs><path id="badge-circle" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs>
+                <text><textPath href="#badge-circle" textLength="488" lengthAdjust="spacing">BOOK A CLASS ✦ LET THE OUTSIDE IN ✦</textPath></text>
+              </svg>
+              <span class="badge__mark mark" aria-hidden="true"><span class="mark__roof"></span><span class="mark__fig"></span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+<section class="manifesto outside" id="story" aria-label="Our story" data-i18n-attr="aria-label:manifesto.label">
+      <svg class="leaves" aria-hidden="true"><use href="#leaves"/></svg>
+      <div class="wrap">
+        <p class="manifesto__line" data-i18n-html="manifesto.1">They told you <s>strength belongs on concrete.</s></p>
+        <p class="manifesto__line" data-i18n-html="manifesto.2">They told you <s>fitness belongs under flickering lights and closed ceilings.</s></p>
+        <p class="manifesto__line" data-i18n-html="manifesto.3">They told you <s>to pick: gym or coffee, friends or fitness.</s></p>
+        <p class="manifesto__verdict" data-i18n="manifesto.verdict">They were wrong.</p>
+        <p class="manifesto__body" data-i18n="manifesto.body">Fit House is a gym with a garden, a café and windows onto the trees. Train at your own pace, in a space that respects your time and energy.</p>
+      </div>
+    </section>
+<!-- Two crossing ribbons of the day's rhythm; words are filled in by the script per language -->
+    <div class="ribbons" aria-hidden="true">
+      <div class="ribbon ribbon--a"><div class="ribbon__track" data-ribbon="a"></div></div>
+      <div class="ribbon ribbon--b"><div class="ribbon__track" data-ribbon="b"></div></div>
+    </div>
+    <section class="section explore" id="explore" aria-labelledby="explore-title">
+      <div class="wrap">
+        <h2 class="title" id="explore-title">
+          <span class="title__black" data-i18n="explore.title1">Step inside</span>
+          <span class="title__light" data-i18n="explore.title2">the house</span>
+        </h2>
+        <p class="lede" data-i18n="explore.lede">Every part of Fit House has its own page. Pick where you'd like to start.</p>
+
+        <div class="bento">
+          <a class="tile tile--house" href="house.html">
+            <img class="tile__photo" src="assets/img/photos/gym-floor.webp" alt="" width="900" height="676" loading="lazy" decoding="async">
+            <span class="tile__body">
+              <span class="tile__title" data-i18n="nav.house">The house</span>
+              <span class="tile__text" data-i18n="explore.house">Gym floor, cardio facing the trees, the garden, the café and Fuel, all under one roof.</span>
+            </span>
+            <svg class="tile__go" aria-hidden="true"><use href="#chevrons"/></svg>
+          </a>
+
+          <a class="tile tile--classes" href="classes.html">
+            <span class="tile__drift" aria-hidden="true" lang="en">Muay Thai</span>
+            <span class="tile__body">
+              <span class="tile__chip" data-next-class></span>
+              <span class="tile__title" data-i18n="nav.classes">Classes</span>
+              <span class="tile__text" data-i18n="explore.classes">Muay Thai three evenings a week, for kids and adults.</span>
+            </span>
+            <svg class="tile__go" aria-hidden="true"><use href="#chevrons"/></svg>
+          </a>
+
+          <a class="tile tile--cafe" href="cafe.html">
+            <img class="tile__photo" src="assets/img/photos/drink-matcha.webp" alt="" width="460" height="806" loading="lazy" decoding="async">
+            <span class="tile__body">
+              <span class="tile__title" data-i18n="nav.cafe">Café</span>
+              <span class="tile__text" data-i18n="explore.cafe">Coffee, matcha and protein shakes, with the macros on the menu.</span>
+            </span>
+            <svg class="tile__go" aria-hidden="true"><use href="#chevrons"/></svg>
+          </a>
+
+          <a class="tile tile--bundles" href="bundles.html">
+            <span class="tile__pass" aria-hidden="true">
+              <span class="mark" aria-hidden="true"><span class="mark__roof"></span><span class="mark__fig"></span></span>
+              <span>$80</span>
+            </span>
+            <span class="tile__body">
+              <span class="tile__title" data-i18n="nav.bundles">Bundles</span>
+              <span class="tile__text" data-i18n="explore.bundles">From a $5 drop-in to full access at $80 a month.</span>
+            </span>
+            <svg class="tile__go" aria-hidden="true"><use href="#chevrons"/></svg>
+          </a>
+
+          <a class="tile tile--visit" href="visit.html">
+            <img class="tile__photo" src="assets/img/photos/entrance.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+            <span class="tile__body">
+              <span class="tile__chip status" data-status></span>
+              <span class="tile__title" data-i18n="nav.visit">Visit</span>
+              <span class="tile__text" data-i18n="explore.visit">Housh, Tyre. Ladies-only mornings, mixed afternoons and Saturdays.</span>
+            </span>
+            <svg class="tile__go" aria-hidden="true"><use href="#chevrons"/></svg>
+          </a>
+
+          <a class="tile tile--book" href="book.html">
+            <span class="tile__body">
+              <span class="tile__title" data-i18n="nav.book">Book a class</span>
+              <span class="tile__text" data-i18n="explore.book">Pick a class and send us the message on WhatsApp.</span>
+            </span>
+            <svg class="tile__go" aria-hidden="true"><use href="#chevrons"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>

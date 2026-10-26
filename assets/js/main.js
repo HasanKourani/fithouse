@@ -2,8 +2,8 @@
   'use strict';
 
   const root = document.documentElement;
+  const PAGE = document.body.dataset.page || 'home';
   const WHATSAPP = '96176684096';
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   // Opening hours in minutes after midnight, Beirut time. Index 0 is Sunday.
   const HOURS = [
@@ -21,14 +21,125 @@
   /* ---------------- Arabic copy ---------------- */
 
   const AR = {
-    'meta.title': 'Fit House | جيم وحديقة وقهوة بالحوش، صور',
+    'meta.title.home': 'Fit House | جيم وحديقة وقهوة بالحوش، صور',
+    'meta.title.house': 'البيت | Fit House، الحوش، صور',
+    'meta.title.classes': 'الكلاسات | Fit House، الحوش، صور',
+    'meta.title.cafe': 'الكافيه | Fit House، الحوش، صور',
+    'meta.title.bundles': 'الباقات | Fit House، الحوش، صور',
+    'meta.title.visit': 'زورونا | Fit House، الحوش، صور',
+    'meta.title.book': 'احجز كلاس | Fit House، الحوش، صور',
+    'nav.home': 'الرئيسية',
+    'nav.cafe': 'الكافيه',
+    'footer.pages': 'كل الصفحات',
+    'crumb.label': 'مكانك بالموقع',
+    'next.label': 'الصفحة الجاية',
+    'page.house': 'البيت',
+    'page.classes': 'الكلاسات',
+    'page.cafe': 'الكافيه',
+    'page.bundles': 'الباقات',
+    'page.visit': 'زورونا',
+    'page.book': 'احجز',
+    'explore.title1': 'فوت لجوّا',
+    'explore.title2': 'وشوف البيت',
+    'explore.lede': 'كل قسم من Fit House إلو صفحة. اختار من وين بدّك تبلّش.',
+    'explore.house': 'صالة الجيم، كارديو مقابيل الشجر، الحديقة، الكافيه وFuel، كلّو تحت سقف واحد.',
+    'explore.classes': 'مواي تاي تلات مسيات بالأسبوع، للولاد والكبار.',
+    'explore.cafe': 'قهوة، ماتشا وبروتين شيك، والماكروز مكتوبة عالمنيو.',
+    'explore.bundles': 'من دخول بـ 5$ لاشتراك كامل بـ 80$ بالشهر.',
+    'explore.visit': 'الحوش، صور. الصبحيات للسيدات، وبعد الضهر والسبت مختلط.',
+    'explore.book': 'اختار كلاس وابعتلنا الرسالة عالواتساب.',
+    'house.intro': 'مساحة كبيرة بس إحساس بيت: أوزان وأجهزة، كارديو حدّ الشبابيك، حديقة برّا وكافيه تقعد فيه بعد التمرين.',
+    'corners.title1': 'كل زاوية',
+    'corners.title2': 'معمولة لرجعتك',
+    'corners.lede': 'مرّق الماوس على أي كلمة لتشوف هالزاوية من البيت.',
+    'corner.cardio': 'تريدميل وبسكليتات مصفوفين حدّ الشبابيك.',
+    'corner.weights': 'بلايتات، رفوف وأوزان حرّة.',
+    'corner.machines': 'أجهزة بلايتات وكابلات لكل عضلة.',
+    'corner.classes': 'مواي تاي للولاد والكبار، تلات مسيات بالأسبوع.',
+    'corner.stretching': 'محل تعمل ستريتشينغ جوّا، أو برّا عالعشب.',
+    'corner.coaching': 'مدرّبين عالأرض ليرافقوك برجعتك.',
+    'tour.title1': 'خود',
+    'tour.title2': 'جولة',
+    'tour.lede': 'اسحب أو مرّق عالجنب لتتفرّج عالبيت.',
+    'tour.label': 'صور من Fit House',
+    'tour.window': 'التريدميل مقابيل الحديقة.',
+    'tour.floor': 'كابلات، بنشات ودامبلز.',
+    'tour.racks': 'رفوف وبلايتات للأيام التقيلة.',
+    'tour.grip': 'امسك، ارفع، تنفّس.',
+    'tour.entrance': 'لحّق اليافطات وفوت.',
+    'tour.garden': 'وبعدين اطلع برّا.',
+    'photo.gymWide': 'أجهزة كابلات وبنشات ودامبلز بصالة Fit House',
+    'photo.racks': 'بلايتات ورفوف حدّ حيط فيه مرايات',
+    'photo.grip': 'إيدين ماسكين بار عن قرب',
+    'classes.intro': 'أكتر من تمرين. انضباط، ثقة وقوّة تحت السيطرة، للولاد والكبار.',
+    'who.title1': 'كلاس واحد',
+    'who.title2': 'لعمرين',
+    'who.kidsTitle': 'تركيز وثقة بالنفس',
+    'who.kidsText': 'الولاد بيتعلّموا التكنيك خطوة بخطوة، وبيطلعوا بتركيز وثقة أكتر من يلي فاتوا فيهن.',
+    'who.when': 'إيمتى',
+    'who.kidsWhen': 'الاثنين، الأربعاء، الجمعة، 6–7 مساءً',
+    'who.price': 'السعر',
+    'who.priceValue': '40$ بالشهر',
+    'who.kidsAsk': 'اسأل عن كلاسات الولاد',
+    'who.adultsTitle': 'قوّة ومهارة',
+    'who.adultsText': 'تمرّن بقوة، تعلّم الصح والاقي إيقاعك، إن كنت عم تبلّش أو راجع.',
+    'who.adultsWhen': 'الاثنين، الأربعاء، الجمعة، 7–8 مساءً',
+    'who.adultsAsk': 'اسأل عن كلاسات الكبار',
+    'quote.label': 'مواي تاي بـ Fit House',
+    'quote.1': 'تمرّن بقوة.',
+    'quote.2': 'تعلّم الصح.',
+    'quote.3': 'والاقي إيقاعك.',
+    'women.title1': 'كلاسات',
+    'women.title2': 'السيدات',
+    'women.lede': 'الصبحيات بأيام الأسبوع للسيدات بس، وكلاسات السيدات ماشية خلال الموسم. راسلونا لتعرفوا برنامج هالموسم.',
+    'women.ask': 'اسألي عن كلاسات السيدات',
+    'cafe.intro': 'لا، مش لازم تتركي قهوتك كرمال تتمرّني. خدي التنين سوا وكفّي نهارك.',
+    'macro.protein': 'بروتين',
+    'macro.carbs': 'كاربوهيدرات',
+    'macro.fat': 'دهون',
+    'stay.title1': 'ضلّ',
+    'stay.title2': 'شوي كمان',
+    'stay.lede': 'تمرّن، اقعد، اشرب قهوتك. ما تلغي قعدة الشباب وبتلحّق تمرينك.',
+    'stay.1': 'قهوة، ماتشا وبروتين شيك',
+    'stay.2': 'طاولات حدّ الشبابيك، والحديقة برّا',
+    'stay.3': 'السعرات والماكروز مكتوبة لكل مشروب',
+    'fuel.title2': 'من DNA Nutrition',
+    'fuel.lede': 'ألواح بروتين DNA Fuel ومكمّلات من DNA Nutrition، متوفّرة عنّا عالاستقبال.',
+    'fuel.recipes': 'مدرّبينا بيشاركوا وصفات سريعة غنية بالبروتين، متل بولات الترويقة، على إنستغرام.',
+    'fuel.ig': 'شوف الوصفات على إنستغرام',
+    'bundles.intro': 'الاستمرارية ما بتصير بالصدفة. بتبلّش بقرار ذكي.',
+    'bundles.card': 'دخول بـ 5$، أو اشتراك كامل بـ 80$ بالشهر.',
+    'compare.title1': 'شو بيشمل',
+    'compare.title2': 'كل اشتراك',
+    'compare.gym': 'دخول الجيم المفتوح',
+    'compare.classes': 'الكلاسات، 3 بالأسبوع',
+    'compare.length': 'المدّة',
+    'compare.yes': 'مشمول',
+    'compare.no': 'مش مشمول',
+    'compare.note': 'مش جاهز لشهر؟ الدخول للجيم بـ 5$ والكلاس الواحد بـ 10$. كلاسات الولاد بـ 30$ بالشهر أو 8$ للكلاس.',
+    'visit.intro': 'مرّوا عالحوش، صور. الباب مفتوح ست أيام بالأسبوع.',
+    'reach.title1': 'تواصل',
+    'reach.title2': 'معنا',
+    'reach.call': 'اتصل',
+    'reach.whatsapp': 'اكتب رسالتك',
+    'reach.map': 'الطريق',
+    'book.intro': 'مش الكل بيلحق محل. اختار شو بدّك وابعتلنا الرسالة عالواتساب.',
+    'book.card': 'ابدأ رسالتك',
+    'steps.title1': 'كيف بيمشي',
+    'steps.title2': 'الحجز',
+    'steps.1title': 'اختار شو بدّك',
+    'steps.1text': 'كلاس للولاد أو الكبار، كلاسات السيدات، باقة، أو بس زيارة.',
+    'steps.2title': 'ابعتها عالواتساب',
+    'steps.2text': 'الرسالة مكتوبة إلك. بيفتح واتساب وهي جاهزة للإرسال.',
+    'steps.3title': 'منأكّدلك محلك',
+    'steps.3text': 'منردّ عليك بالشات لنأكّد محلك.',
     'skip': 'انتقل للمحتوى',
-    'brand.label': 'Fit House، رجوع لفوق',
+    'brand.label': 'Fit House، الصفحة الرئيسية',
     'nav.label': 'القائمة الرئيسية',
     'nav.house': 'البيت',
     'nav.classes': 'الكلاسات',
     'nav.bundles': 'الباقات',
-    'nav.visit': 'الدوام والموقع',
+    'nav.visit': 'زورونا',
     'nav.book': 'احجز كلاس',
     'nav.menu': 'القائمة',
     'hero.lede': 'جيم مع حديقة وقهوة وشبابيك عالشجر. بالحوش، صور.',
@@ -47,7 +158,7 @@
     'photo.window': 'تريدميل اتنين مقابيل شبّاك عريض عالشجر والعشب',
     'photo.gymFloor': 'رفوف وأوزان وأجهزة رجلين بصالة Fit House',
     'photo.bikes': 'بسكليتات رياضة مصفوفة حدّ شبّاك عالشجر',
-    'photo.cafe': 'مشترك عم يحرّك قهوته على طاولة حدّ شبّاك الكافيه',
+    'photo.cafe': 'كونتر الكافيه، ولوحتين المنيو فوق ماكينة الإسبريسو',
     'photo.fuel': 'ألواح بروتين DNA Fuel ولبن يوناني على طاولة خشب',
     'photo.garden': 'مشترك حامل كيتل بيل بحديقة Fit House',
     'photo.matcha': 'ماتشا لاتيه مع كولد فوم بكبّاية Fit House',
@@ -66,7 +177,10 @@
     'room.garden.text': 'مساحة خضرا لترتاح، تعمل ستريتشينغ، أو تقعد مع رفقاتك.',
     'cups.title1': 'شو بكبّايتك',
     'cups.title2': 'كمان بيفرق',
-    'cups.lede': 'كافيه Fit House بيكتبلك السعرات والماكروز لكل مشروب، من القهوة للبروتين شيك.',
+    'hero.drink': 'ماتشا لاتيه',
+    'hero.drinkNote': '120 سعرة بالكافيه',
+    'pass.month': 'بالشهر',
+    'cups.lede':'كافيه Fit House بيكتبلك السعرات والماكروز لكل مشروب، من القهوة للبروتين شيك.',
     'cup.matcha': 'ماتشا لاتيه مع كولد فوم',
     'cup.matchaProtein': '4.1 غ بروتين',
     'cup.matchaNote': 'كمان متوفّر بالفريز، التوت الأزرق والمانغا.',
@@ -94,7 +208,6 @@
     'bundles.adults': 'كبار',
     'bundles.kids': 'ولاد',
     'bundles.help': 'مش متأكد شو بيناسبك؟ ابعتلنا رسالة ومنساعدك تختار.',
-    'price.mtKids': 'اشتراك مواي تاي',
     'bundles.ask': 'اسأل عن باقة',
     'bundles.kidsNote': 'الولاد بيشتركوا بالكلاسات بس.',
     'price.gym': 'اشتراك الجيم',
@@ -106,7 +219,7 @@
     'price.single': 'كلاس واحد',
     'price.oneClass': 'كلاس واحد',
     'price.full': 'اشتراك كامل',
-    'price.fullDetail': 'الجيم والكلاسات. أوفر بـ 10$ من الاشتراكين لحال.',
+    'price.fullDetail': 'الجيم والكلاسات.',
     'book.title1': 'مش الكل',
     'book.title2': 'رح يلحق محل',
     'book.lede': 'الأماكن بكل كلاس محدودة. اختار شو بيهمّك وابعتلنا الرسالة عالواتساب.',
@@ -154,8 +267,6 @@
         `Hi Fit House! I'd like to ask about ${interest.toLowerCase().replace(/^muay thai/, 'Muay Thai')}.` +
         (day ? ` The best day for me is ${day}.` : ''),
       sent: 'Opened in WhatsApp. Tap send there to book.',
-      motionOn: 'Animations: on',
-      motionOff: 'Animations: off',
       today: 'Today',
       who: { kids: 'for kids', adults: 'for adults' },
       liveClass: (who, until) => `Happening now: Muay Thai ${who}, until ${until}`,
@@ -177,8 +288,6 @@
       message: (interest, day) =>
         `مرحبا Fit House! بدّي إسأل عن ${interest}.` + (day ? ` أنسب يوم إلي هو ${day}.` : ''),
       sent: 'انفتح واتساب. اكبس إرسال هونيك لتحجز.',
-      motionOn: 'الحركة: شغّالة',
-      motionOff: 'الحركة: مطفيّة',
       today: 'اليوم',
       who: { kids: 'للولاد', adults: 'للكبار' },
       liveClass: (who, until) => `هلّق عم يصير: مواي تاي ${who}، لحدّ الساعة ${until}`,
@@ -285,7 +394,8 @@
     { day, from: 1080, to: 1140, who: 'kids' },
     { day, from: 1140, to: 1200, who: 'adults' },
   ]);
-  const nextClassEl = document.getElementById('next-class');
+  // Every spot that shows the next class: the timetable chip, the page banner, the Home tile.
+  const nextClassEls = document.querySelectorAll('[data-next-class]');
 
   function nextClass(day, mins) {
     const live = CLASSES.find((c) => c.day === day && mins >= c.from && mins < c.to);
@@ -331,8 +441,11 @@
     else if (n.off === 0) text = ui.nextToday(who, formatTime(n.from), ui.wait(Math.floor(n.wait / 60), n.wait % 60));
     else if (n.off === 1) text = ui.nextTomorrow(who, formatTime(n.from));
     else text = ui.nextOn(who, ui.days[n.day], formatTime(n.from));
-    nextClassEl.textContent = text;
-    nextClassEl.hidden = false;
+    nextClassEls.forEach((el) => {
+      el.textContent = text;
+      el.hidden = false;
+      el.dataset.live = String(n.live);
+    });
   }
 
   /* ---------------- Language ---------------- */
@@ -368,18 +481,19 @@
     });
 
     const titleEn = remember(document, 'title', document.title);
-    document.title = ar ? AR['meta.title'] : titleEn;
+    document.title = ar ? AR[`meta.title.${PAGE}`] ?? titleEn : titleEn;
 
     const toggle = document.getElementById('lang-toggle');
     toggle.textContent = t().toggle;
     toggle.lang = t().toggleLang;
 
-    motionToggle.textContent = motion ? t().motionOn : t().motionOff;
 
     renderTimes();
     renderStatus();
     renderClasses();
+    renderRibbons();
     updateMessage();
+    requestAnimationFrame(fitPageWords);
     if (heroActive) requestAnimationFrame(() => { measureHero(); renderHero(); });
 
     try { localStorage.setItem('fithouse-lang', lang); } catch (e) { /* storage unavailable */ }
@@ -393,7 +507,9 @@
 
   const nav = document.getElementById('nav');
   const menuBtn = document.getElementById('nav-menu');
+  // Home has the big hero; every other page opens with a smaller framed banner.
   const hero = document.getElementById('hero');
+  const pageBanner = document.querySelector('.phero');
 
   function setMenu(open) {
     nav.classList.toggle('nav--open', open);
@@ -408,30 +524,49 @@
     }
   });
 
+  // The pill stays glassy over the dark banner and turns solid once you scroll past it.
   function renderNav() {
+    const wall = hero || pageBanner;
+    if (!wall) {
+      nav.classList.add('nav--solid');
+      return;
+    }
     const pastWall = heroActive
       ? -hero.getBoundingClientRect().top > window.innerHeight * 0.35
-      : hero.getBoundingClientRect().bottom <= nav.offsetHeight;
+      : wall.getBoundingClientRect().bottom <= nav.offsetHeight + 24;
     nav.classList.toggle('nav--solid', pastWall);
   }
 
   /* ---------------- Hero: the window opens as you scroll ---------------- */
 
-  const stage = hero.querySelector('.hero__stage');
+  const stage = hero?.querySelector('.hero__stage');
+  const frame = document.getElementById('hero-frame');
+  const heroInner = hero?.querySelector('.hero__inner');
   const windowEl = document.getElementById('hero-window');
-  const outside = hero.querySelector('.hero__outside');
-  const outsideMark = hero.querySelector('.hero__outside-mark');
-  const outsideLeaves = outside.querySelector('.leaves');
-  const outsidePhoto = outside.querySelector('.hero__photo');
-  const copy = hero.querySelector('.hero__copy');
+  const outside = hero?.querySelector('.hero__outside');
+  const outsideMark = hero?.querySelector('.hero__outside-mark');
+  const outsideLeaves = outside?.querySelector('.leaves');
+  const outsidePhoto = outside?.querySelector('.hero__photo');
+  // Every piece of the wall except the window. Each one fades on its own, because fading a
+  // shared parent would flatten the layers and push the words in front of the photo.
+  const wallParts = hero
+    ? [...heroInner.querySelectorAll('.hero__title > *, .hero__inner > :not(.hero__title):not(.hero__window)')]
+    : [];
   let heroActive = false;
   let rect = null;
+  let frameGap = 0;
+  let frameRadius = 0;
 
   const clamp = (v, min = 0, max = 1) => Math.min(max, Math.max(min, v));
   const ease = (p) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
 
   function measureHero() {
-    const s = stage.getBoundingClientRect();
+    if (!hero) return;
+    stage.style.removeProperty('--fm');
+    frame.style.removeProperty('--fr');
+    frameGap = parseFloat(getComputedStyle(stage).paddingTop) || 0;
+    frameRadius = parseFloat(getComputedStyle(frame).borderTopLeftRadius) || 0;
+    const s = frame.getBoundingClientRect();
     const w = windowEl.getBoundingClientRect();
     rect = {
       top: w.top - s.top,
@@ -469,9 +604,15 @@
     outside.style.clipPath =
       `inset(${rect.top * e}px ${rect.right * e + shrink}px ${rect.bottom * e}px ${rect.left * e + shrink}px round ${radius}px)`;
     const fade = clamp(p / 0.4);
-    copy.style.opacity = String(1 - fade);
-    copy.style.transform = `translateY(${-fade * 2.5}rem)`;
-    copy.style.visibility = fade >= 1 ? 'hidden' : '';
+    wallParts.forEach((el) => {
+      el.style.opacity = String(1 - fade);
+      el.style.transform = fade ? `translateY(${-fade * 2.5}rem)` : '';
+      el.style.visibility = fade >= 1 ? 'hidden' : '';
+    });
+    // In the last stretch the frame's margin and corners melt away, so the green runs edge to edge.
+    const melt = clamp((p - 0.72) / 0.28);
+    stage.style.setProperty('--fm', `${frameGap * (1 - melt)}px`);
+    frame.style.setProperty('--fr', `${frameRadius * (1 - melt)}px`);
     // The photo grows with the window, so it starts framed like the still pill,
     // then dissolves into the green as the window opens fully.
     const ps = outsidePhoto.style;
@@ -488,66 +629,52 @@
     outsideLeaves.style.opacity = String(0.3 * (1 - clamp((p - 0.7) / 0.3)));
   }
 
-  function splitHeadline() {
-    const h1 = document.getElementById('hero-title');
-    if (h1.classList.contains('is-split')) return;
-    const words = h1.textContent.trim().split(/\s+/);
-    h1.textContent = '';
-    words.forEach((word, i) => {
+  // Wraps each word (or letter) so it can rise out of its own little mask.
+  function splitInto(el, unit, start) {
+    const text = el.textContent.trim();
+    const parts = unit === 'letter' ? [...text] : text.split(/\s+/);
+    el.textContent = '';
+    parts.forEach((part, i) => {
       const outer = document.createElement('span');
       const inner = document.createElement('span');
       outer.className = 'w';
-      inner.style.setProperty('--i', i);
-      inner.textContent = word;
+      inner.style.setProperty('--i', start + i);
+      inner.textContent = part;
       outer.appendChild(inner);
-      h1.append(outer, i < words.length - 1 ? ' ' : '');
+      el.append(outer);
+      if (unit === 'word' && i < parts.length - 1) el.append(' ');
     });
-    h1.classList.add('is-split');
+    return start + parts.length;
   }
 
-  /* ---------------- Motion switch ---------------- */
-
-  // The OS setting decides by default; the footer switch overrides it and is remembered.
-  const MOTION_KEY = 'fithouse-motion';
-  const motionToggle = document.getElementById('motion-toggle');
-  let motion = false;
-  let motionOverride = null;
-
-  function motionWanted() {
-    let pref = motionOverride;
-    if (!pref) {
-      try { pref = localStorage.getItem(MOTION_KEY); } catch (e) { /* storage unavailable */ }
-    }
-    return pref === 'on' || (pref !== 'off' && !reduceMotion.matches);
+  function splitHeadline() {
+    if (!hero || heroInner.classList.contains('is-split')) return;
+    const h1 = document.getElementById('hero-title');
+    // Split letters would be read one by one, so the heading keeps its sentence as a label.
+    h1.setAttribute('aria-label', h1.textContent.replace(/\s+/g, ' ').trim());
+    let i = splitInto(heroInner.querySelector('.hero__let'), 'word', 0);
+    const outs = heroInner.querySelectorAll('.hero__out');
+    outs.forEach((el) => splitInto(el, 'letter', i));
+    i += outs[0].textContent.length;
+    splitInto(heroInner.querySelector('.hero__in'), 'word', i);
+    heroInner.classList.add('is-split');
   }
+
+  /* ---------------- Motion ---------------- */
+
+  // Animations are always on, whatever the device's motion setting.
+  const motion = true;
 
   function setupMotion() {
-    motion = motionWanted();
-    heroActive = motion;
-    root.classList.toggle('motion', motion);
-    motionToggle.setAttribute('aria-pressed', String(motion));
-    motionToggle.textContent = motion ? t().motionOn : t().motionOff;
+    heroActive = Boolean(hero);
+    root.classList.add('motion');
     if (heroActive) {
       measureHero();
       renderHero();
-    } else {
-      introK = 1;
-      outside.style.clipPath = '';
-      outsideLeaves.style.opacity = '';
-      outsidePhoto.removeAttribute('style');
-      copy.style.opacity = '';
-      copy.style.transform = '';
-      copy.style.visibility = '';
     }
     renderNav();
+    renderDrift();
   }
-
-  motionToggle.addEventListener('click', () => {
-    motionOverride = motion ? 'off' : 'on';
-    try { localStorage.setItem(MOTION_KEY, motionOverride); } catch (e) { /* storage unavailable */ }
-    setupMotion();
-  });
-  reduceMotion.addEventListener('change', setupMotion);
 
   /* ---------------- Scroll progress ---------------- */
 
@@ -571,6 +698,7 @@
       renderHero();
       renderNav();
       renderProgress();
+      renderDrift();
       ticking = false;
     });
   }, { passive: true });
@@ -595,11 +723,16 @@
   }
 
   // Each target gets .is-in once it scrolls into view; CSS animates only under .motion.
+  // Blocks taller than the screen (the stacked house on a phone) can never show 20% of
+  // themselves, so they also count once they fill a third of the screen.
   const onReveal = new Map();
   const io = 'IntersectionObserver' in window
     ? new IntersectionObserver((entries) => {
-      entries.forEach((entry) => { if (entry.isIntersecting) reveal(entry.target); });
-    }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' })
+      entries.forEach((entry) => {
+        const fills = entry.rootBounds && entry.intersectionRect.height > entry.rootBounds.height / 3;
+        if (entry.isIntersecting && (entry.intersectionRatio >= 0.2 || fills)) reveal(entry.target);
+      });
+    }, { threshold: [0, 0.05, 0.1, 0.15, 0.2], rootMargin: '0px 0px -8% 0px' })
     : null;
 
   function reveal(el) {
@@ -618,6 +751,196 @@
   }
 
   /* ---------------- Playful details ---------------- */
+
+  // Two crossing ribbons with the rhythm of a visit, in the page's language.
+  const RIBBONS = {
+    en: { a: ['Train', 'Sit', 'Sip', 'Breathe', 'Repeat'], b: ['Let the outside in', 'Housh, Tyre', 'Gym', 'Garden', 'Café'] },
+    ar: { a: ['تمرّن', 'اقعد', 'اشرب', 'تنفّس', 'عيد'], b: ['Let the outside in', 'الحوش، صور', 'جيم', 'حديقة', 'كافيه'] },
+  };
+  const RIBBON_MARK = '<span class="ribbon__mark mark"><span class="mark__roof"></span><span class="mark__fig"></span></span>';
+
+  function renderRibbons() {
+    document.querySelectorAll('[data-ribbon]').forEach((track) => {
+      const words = RIBBONS[lang][track.dataset.ribbon];
+      const run = words.map((w) => `<span class="ribbon__item">${w}</span>${RIBBON_MARK}`).join('');
+      // Two identical halves, each wider than the screen, so the loop never shows a seam.
+      track.innerHTML = run.repeat(3) + run.repeat(3);
+    });
+  }
+
+  // Big outlined MUAY THAI slides sideways as the classes section passes.
+  const driftEl = document.querySelector('.drift');
+  function renderDrift() {
+    if (!driftEl) return;
+    if (!motion) { driftEl.style.removeProperty('--sx'); return; }
+    const r = driftEl.parentElement.getBoundingClientRect();
+    const k = clamp((window.innerHeight - r.top) / (window.innerHeight + r.height));
+    driftEl.style.setProperty('--sx', `${(0.06 - k * 0.4) * 100}vw`);
+  }
+
+  // Daylight on the dark walls follows the mouse; bento tiles get the same spotlight.
+  document.querySelectorAll('.hero__frame, .phero__frame, .tile').forEach((wallEl) => {
+    wallEl.addEventListener('pointermove', (e) => {
+      if (!motion || e.pointerType !== 'mouse') return;
+      const r = wallEl.getBoundingClientRect();
+      wallEl.style.setProperty('--mx', `${e.clientX - r.left}px`);
+      wallEl.style.setProperty('--my', `${e.clientY - r.top}px`);
+    });
+  });
+
+  // The membership card tilts toward the pointer and catches the light.
+  const pass = document.getElementById('pass');
+  if (pass) {
+    pass.addEventListener('pointermove', (e) => {
+      if (!motion || e.pointerType !== 'mouse') return;
+      const r = pass.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width;
+      const y = (e.clientY - r.top) / r.height;
+      pass.classList.add('is-tilting');
+      pass.style.setProperty('--ry', `${((x - 0.5) * 18).toFixed(2)}deg`);
+      pass.style.setProperty('--rx', `${((0.5 - y) * 14).toFixed(2)}deg`);
+      pass.style.setProperty('--gx', `${(x * 100).toFixed(1)}%`);
+      pass.style.setProperty('--gy', `${(y * 100).toFixed(1)}%`);
+    });
+    pass.addEventListener('pointerleave', () => {
+      pass.classList.remove('is-tilting');
+      ['--rx', '--ry', '--gx', '--gy'].forEach((prop) => pass.style.removeProperty(prop));
+    });
+  }
+
+  // House page: pointing at a word in the list shows a photo of that corner beside the pointer.
+  document.querySelectorAll('.corner').forEach((row) => {
+    const photo = row.querySelector('.corner__photo');
+    row.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'mouse') return;
+      const r = row.getBoundingClientRect();
+      row.style.setProperty('--px', `${e.clientX - r.left}px`);
+      row.style.setProperty('--py', `${e.clientY - r.top}px`);
+      row.classList.add('is-peek');
+    });
+    row.addEventListener('pointerleave', () => row.classList.remove('is-peek'));
+    if (photo) photo.addEventListener('error', () => photo.remove());
+  });
+
+  // House page: the photo strip can be dragged sideways with the mouse.
+  document.querySelectorAll('.tour__track').forEach((track) => {
+    let startX = 0;
+    let startScroll = 0;
+    let dragging = false;
+    track.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'mouse') return;
+      dragging = true;
+      startX = e.clientX;
+      startScroll = track.scrollLeft;
+      track.classList.add('is-dragging');
+    });
+    window.addEventListener('pointermove', (e) => {
+      if (dragging) track.scrollLeft = startScroll - (e.clientX - startX);
+    });
+    window.addEventListener('pointerup', () => {
+      dragging = false;
+      track.classList.remove('is-dragging');
+    });
+  });
+
+  // Page banners: the big word is sized to fill the frame, whatever the language.
+  function fitPageWords() {
+    document.querySelectorAll('.phero__inner').forEach((inner) => {
+      const word = inner.querySelector('.phero__word');
+      if (!word) return;
+      inner.style.setProperty('--F', '100px');
+      const width = word.scrollWidth;
+      if (!width) return;
+      const room = inner.clientWidth * 0.9;
+      const tallest = inner.clientHeight * 0.42;
+      inner.style.setProperty('--F', `${Math.min((100 * room) / width, tallest, 330).toFixed(1)}px`);
+    });
+  }
+  window.addEventListener('resize', fitPageWords);
+  // The Arabic font only loads once Arabic text shows up, so re-fit whenever a font arrives.
+  if (document.fonts) {
+    document.fonts.ready.then(fitPageWords);
+    document.fonts.addEventListener('loadingdone', fitPageWords);
+  }
+
+  // Leaving for another page: the green curtain closes first, then opens on the next page.
+  const curtain = document.getElementById('curtain');
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest && e.target.closest('a[href]');
+    if (!link || !motion || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (link.target === '_blank' || link.hasAttribute('download')) return;
+    const url = new URL(link.href, location.href);
+    const samePage = url.pathname === location.pathname && url.search === location.search;
+    if (url.origin !== location.origin || samePage || !/\.html$|\/$/.test(url.pathname)) return;
+    e.preventDefault();
+    try { sessionStorage.setItem('fithouse-curtain', '1'); } catch (err) { /* storage unavailable */ }
+    // Reset the curtain below the screen without animating, then raise it.
+    curtain.style.transition = 'none';
+    root.classList.remove('is-arrived');
+    void curtain.offsetHeight;
+    curtain.style.transition = '';
+    root.classList.add('is-leaving');
+    setTimeout(() => { location.href = url.href; }, 560);
+  });
+  function openCurtain() {
+    try { sessionStorage.removeItem('fithouse-curtain'); } catch (err) { /* storage unavailable */ }
+    if (!root.classList.contains('is-arriving')) return;
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      root.classList.add('is-arrived');
+      root.classList.remove('is-arriving');
+    }));
+  }
+  // Coming back with the browser's back button restores the old page, curtain and all.
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) root.classList.remove('is-leaving', 'is-arriving');
+  });
+
+  // Buttons lean toward the pointer a little.
+  document.querySelectorAll('[data-magnetic]').forEach((el) => {
+    el.addEventListener('pointermove', (e) => {
+      if (!motion || e.pointerType !== 'mouse') return;
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--mgx', `${((e.clientX - (r.left + r.width / 2)) * 0.22).toFixed(1)}px`);
+      el.style.setProperty('--mgy', `${((e.clientY - (r.top + r.height / 2)) * 0.3).toFixed(1)}px`);
+    });
+    el.addEventListener('pointerleave', () => {
+      el.style.removeProperty('--mgx');
+      el.style.removeProperty('--mgy');
+    });
+  });
+
+  // A ring follows the mouse with a little lag and swells over anything you can press.
+  const cursor = document.getElementById('cursor');
+  const cursorRing = cursor.querySelector('.cursor__ring');
+  const cursorDot = cursor.querySelector('.cursor__dot');
+  const PRESSABLE = 'a, button, label, select, summary, .cup, .pass';
+  let cx = 0;
+  let cy = 0;
+  let rx = 0;
+  let ry = 0;
+  let cursorFrame = null;
+  let cursorSeen = false;
+
+  function cursorLoop() {
+    rx += (cx - rx) * 0.2;
+    ry += (cy - ry) * 0.2;
+    cursorRing.style.transform = `translate(${rx.toFixed(1)}px, ${ry.toFixed(1)}px)`;
+    cursorFrame = Math.abs(cx - rx) + Math.abs(cy - ry) > 0.2 ? requestAnimationFrame(cursorLoop) : null;
+  }
+
+  document.addEventListener('pointermove', (e) => {
+    if (e.pointerType !== 'mouse') return;
+    root.classList.add('has-mouse');
+    if (!motion) return;
+    cx = e.clientX;
+    cy = e.clientY;
+    if (!cursorSeen) { rx = cx; ry = cy; cursorSeen = true; }
+    cursorDot.style.transform = `translate(${cx}px, ${cy}px)`;
+    cursor.classList.remove('is-out');
+    cursor.classList.toggle('is-hover', Boolean(e.target.closest && e.target.closest(PRESSABLE)));
+    if (!cursorFrame) cursorFrame = requestAnimationFrame(cursorLoop);
+  }, { passive: true });
+  document.documentElement.addEventListener('mouseleave', () => cursor.classList.add('is-out'));
 
   // Leaf shadows drift away from the mouse, like light moving through the branches.
   document.querySelectorAll('.hero__stage, .manifesto').forEach((zone) => {
@@ -715,9 +1038,21 @@
     return t().message(label, day);
   }
 
-  const hint = form.querySelector('.composer__hint');
+  const hint = form?.querySelector('.composer__hint');
   let typingTimer = null;
   let typingFrame = null;
+  let sent = false;
+
+  // Once the message has gone to WhatsApp, the bubble gets the two ticks.
+  function finishBubble() {
+    preview.removeAttribute('aria-busy');
+    if (!sent) return;
+    const ticks = document.createElement('span');
+    ticks.className = 'bubble__ticks';
+    ticks.setAttribute('aria-hidden', 'true');
+    ticks.textContent = '✓✓';
+    preview.appendChild(ticks);
+  }
 
   // With motion on, a change shows WhatsApp-style typing dots, then types the new message out.
   function showMessage(text, animate) {
@@ -726,7 +1061,7 @@
     preview.classList.remove('is-sent');
     if (!animate || !motion) {
       preview.textContent = text;
-      preview.removeAttribute('aria-busy');
+      finishBubble();
       return;
     }
     preview.setAttribute('aria-busy', 'true');
@@ -738,7 +1073,7 @@
         const k = clamp((now - start) / duration);
         preview.textContent = text.slice(0, Math.ceil(text.length * k));
         if (k < 1) typingFrame = requestAnimationFrame(step);
-        else preview.removeAttribute('aria-busy');
+        else finishBubble();
       };
       typingFrame = requestAnimationFrame(step);
     }, 550);
@@ -748,29 +1083,32 @@
     if (form) showMessage(composeMessage(), animate);
   }
 
-  form.addEventListener('change', () => updateMessage(true));
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const text = composeMessage();
-    window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
-    hint.textContent = t().sent;
-    if (motion) {
-      // The bubble flies off as if sent, then the message comes back for another go.
-      clearTimeout(typingTimer);
-      preview.classList.add('is-sent');
-      typingTimer = setTimeout(() => showMessage(text, true), 650);
-    }
-  });
-
-  document.querySelectorAll('[data-pick]').forEach((link) => {
-    link.addEventListener('click', () => {
-      const input = form.querySelector(`input[name="interest"][value="${link.dataset.pick}"]`);
-      if (input) {
-        input.checked = true;
-        updateMessage(true);
+  if (form) {
+    form.addEventListener('change', () => {
+      sent = false;
+      updateMessage(true);
+    });
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const text = composeMessage();
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+      hint.textContent = t().sent;
+      sent = true;
+      if (motion) {
+        // The bubble flies off as if sent, then comes back with its ticks.
+        clearTimeout(typingTimer);
+        preview.classList.add('is-sent');
+        typingTimer = setTimeout(() => showMessage(text, true), 650);
+      } else {
+        showMessage(text, false);
       }
     });
-  });
+
+    // Links like book.html?pick=women arrive with that option already chosen.
+    const pick = new URLSearchParams(location.search).get('pick');
+    const picked = pick && [...form.querySelectorAll('input[name="interest"]')].find((input) => input.value === pick);
+    if (picked) picked.checked = true;
+  }
 
   /* ---------------- Start ---------------- */
 
@@ -787,9 +1125,11 @@
   renderNav();
   renderProgress();
   progress.classList.remove('is-moving');
-  if (motion) playIntro();
+  openCurtain();
+  if (heroActive) playIntro();
 
   watch('.manifesto__line, .manifesto__verdict, .manifesto__body, .house, .hours');
+  watch('.bento, .who, .steps, .compare, .corners__list, .reach, .split__grid, .quote');
   watch('.cups', () => {
     if (motion) document.querySelectorAll('.cups .count').forEach((c) => countUp(c, Number(c.dataset.to)));
   });
