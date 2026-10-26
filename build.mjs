@@ -7,6 +7,9 @@ import { fileURLToPath } from 'node:url';
 // Bump this whenever styles.css or main.js changes, so browsers fetch fresh copies.
 const VERSION = '16';
 
+// Where the site is published. Link previews need absolute URLs for the page and its image.
+const SITE = 'https://hasankourani.github.io/fithouse/';
+
 const PAGES = [
   {
     id: 'home',
@@ -63,6 +66,8 @@ for (const page of PAGES) {
     .replaceAll('{{title}}', page.title)
     .replaceAll('{{description}}', page.description)
     .replaceAll('{{page}}', page.id)
+    .replaceAll('{{url}}', page.file === 'index.html' ? SITE : SITE + page.file)
+    .replaceAll('{{site}}', SITE)
     .replaceAll('{{v}}', VERSION)
     .replace(/\{\{current:(\w+)\}\}/g, (_, id) => (id === page.id ? ' aria-current="page"' : ''));
   writeFileSync(join(root, page.file), html);

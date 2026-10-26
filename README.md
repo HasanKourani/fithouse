@@ -28,6 +28,8 @@ node build.mjs
 
 When you change `assets/css/styles.css` or `assets/js/main.js`, bump `VERSION` in `build.mjs` before rebuilding so browsers fetch the new files.
 
+Link previews (WhatsApp, Instagram and so on) use `assets/img/og-image.jpg`, a 1200×630 image. They need full addresses, so `SITE` in `build.mjs` holds the published address. Change it if the site moves.
+
 Arabic text lives in the `AR` table at the top of `assets/js/main.js`, keyed by each element's `data-i18n` attribute.
 
 ## Running locally
