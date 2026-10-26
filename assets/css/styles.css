@@ -379,6 +379,8 @@ html[lang="ar"] .title { line-height: 1.15; }
   padding: var(--fm, var(--frame));
 }
 .motion .hero { height: 230vh; }
+/* Phones and tablets open the window in one go on the first swipe, so the hero is one screen */
+.motion .hero.hero--auto { height: auto; }
 .motion .hero__stage {
   position: sticky;
   top: 0;

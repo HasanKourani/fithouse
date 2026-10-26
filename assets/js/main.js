@@ -532,7 +532,7 @@
       return;
     }
     const pastWall = heroActive
-      ? -hero.getBoundingClientRect().top > window.innerHeight * 0.35
+      ? -hero.getBoundingClientRect().top > window.innerHeight * 0.35 || (autoMode && autoP > 0.5)
       : wall.getBoundingClientRect().bottom <= nav.offsetHeight + 24;
     nav.classList.toggle('nav--solid', pastWall);
   }
@@ -593,10 +593,117 @@
     requestAnimationFrame(step);
   }
 
+  // Phones and tablets don't scrub the window with the scroll: the first swipe down opens it
+  // in one go and the animation finishes on its own, then the page scrolls as normal.
+  const autoQuery = matchMedia('(max-width: 760px), (pointer: coarse)');
+  const OPEN_MS = 1300;
+  let autoMode = false;
+  let autoP = 0;        // how open the window is in that mode, 0 → 1
+  let autoTarget = 0;   // where it is heading
+  let autoFrame = 0;
+  let leftTop = false;  // scrolled well away from the top since it opened
+
+  function heroProgress() {
+    if (autoMode) return autoP;
+    const travel = hero.offsetHeight - stage.offsetHeight;
+    return clamp(-hero.getBoundingClientRect().top / travel);
+  }
+
+  function playHero(target) {
+    if (autoTarget === target && (autoFrame || autoP === target)) return;
+    autoTarget = target;
+    cancelAnimationFrame(autoFrame);
+    const from = autoP;
+    const start = performance.now();
+    const duration = OPEN_MS * Math.abs(target - from);
+    const step = (now) => {
+      const k = duration ? clamp((now - start) / duration) : 1;
+      autoP = from + (target - from) * k;
+      renderHero();
+      renderNav();
+      autoFrame = k < 1 ? requestAnimationFrame(step) : 0;
+    };
+    autoFrame = requestAnimationFrame(step);
+  }
+
+  function setHeroMode() {
+    autoMode = heroActive && autoQuery.matches;
+    hero.classList.toggle('hero--auto', autoMode);
+    cancelAnimationFrame(autoFrame);
+    autoFrame = 0;
+    autoP = autoTarget = 0;
+    leftTop = false;
+    measureHero();
+    renderHero();
+    renderNav();
+  }
+
+  // The page holds still while the window opens, then lets go.
+  const opening = () => autoMode && autoTarget === 1 && autoFrame !== 0;
+  // A swipe down from the very top, with the window shut, opens it instead of scrolling.
+  const opensHere = () => autoMode && autoTarget === 0 && window.scrollY <= 2 && !nav.classList.contains('nav--open');
+
+  if (hero) {
+    let touchY = null;
+    let touchDecided = false;
+    window.addEventListener('touchstart', (e) => {
+      touchY = e.touches[0].clientY;
+      touchDecided = false;
+    }, { passive: true });
+    window.addEventListener('touchmove', (e) => {
+      if (!autoMode || touchY === null) return;
+      if (opening()) { e.preventDefault(); return; }
+      // Decide on the first move: once the browser starts scrolling it can't be stopped.
+      if (touchDecided) return;
+      touchDecided = true;
+      if (touchY - e.touches[0].clientY > 0 && opensHere()) {
+        e.preventDefault();
+        playHero(1);
+      }
+    }, { passive: false });
+
+    // A trackpad flick keeps sending wheel events after the window opens; swallow the rest of it.
+    let wheelAt = 0;
+    let wheelHeld = false;
+    window.addEventListener('wheel', (e) => {
+      if (!autoMode) return;
+      const now = performance.now();
+      const sameFlick = now - wheelAt < 160;
+      wheelAt = now;
+      if (opening() || (wheelHeld && sameFlick)) { e.preventDefault(); return; }
+      wheelHeld = false;
+      if (e.deltaY > 0 && opensHere()) {
+        e.preventDefault();
+        wheelHeld = true;
+        playHero(1);
+      }
+    }, { passive: false });
+
+    window.addEventListener('keydown', (e) => {
+      if (!autoMode || e.altKey || e.ctrlKey || e.metaKey) return;
+      if (e.key === ' ' && e.target !== document.body) return;
+      if (!['ArrowDown', 'PageDown', ' ', 'End', 'ArrowUp', 'PageUp', 'Home'].includes(e.key)) return;
+      if (opening()) { e.preventDefault(); return; }
+      if (['ArrowDown', 'PageDown', ' ', 'End'].includes(e.key) && opensHere()) {
+        e.preventDefault();
+        playHero(1);
+      }
+    });
+  }
+
+  // Back at the top after scrolling away, the window closes again, as the scrubbed version does.
+  function watchHeroTop() {
+    if (!autoMode || autoTarget !== 1 || autoFrame) return;
+    if (window.scrollY > stage.offsetHeight * 0.5) leftTop = true;
+    else if (leftTop && window.scrollY <= 2) {
+      leftTop = false;
+      playHero(0);
+    }
+  }
+
   function renderHero() {
     if (!heroActive || !rect) return;
-    const travel = hero.offsetHeight - stage.offsetHeight;
-    const p = clamp(-hero.getBoundingClientRect().top / travel);
+    const p = heroProgress();
     const e = 1 - ease(p);
     const winW = rect.stageW - (rect.left + rect.right) * e;
     const shrink = (winW / 2) * (1 - ease(introK));
@@ -669,8 +776,8 @@
     heroActive = Boolean(hero);
     root.classList.add('motion');
     if (heroActive) {
-      measureHero();
-      renderHero();
+      setHeroMode();
+      autoQuery.addEventListener('change', setHeroMode);
     }
     renderNav();
     renderDrift();
@@ -696,6 +803,7 @@
     ticking = true;
     requestAnimationFrame(() => {
       renderHero();
+      watchHeroTop();
       renderNav();
       renderProgress();
       renderDrift();

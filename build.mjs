@@ -5,7 +5,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 // Bump this whenever styles.css or main.js changes, so browsers fetch fresh copies.
-const VERSION = '16';
+const VERSION = '17';
 
 // Where the site is published. Link previews need absolute URLs for the page and its image.
 const SITE = 'https://hasankourani.github.io/fithouse/';
